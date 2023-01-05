@@ -31,9 +31,9 @@ export const ListGroup = styled.ul`
     width: 100%;
     height: 100%;
     z-index: 99;
-    background: rgba(0, 0, 0, 0.82);
+    background: rgba(0, 0, 0, 0.95);
   }
-  transition: .5s all ease;
+  transition: 1s all ease;
 `
 
 export const ListItem = styled.li`

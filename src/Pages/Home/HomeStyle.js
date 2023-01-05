@@ -22,6 +22,7 @@ export const MainText = styled.p`
   align-items: center;
   margin-top: 8rem;
   font-size: 53px;
+  font-weight: bold;
   @media (max-width: 730px) {
     font-size: 47px;
   }
@@ -32,7 +33,7 @@ export const MainText = styled.p`
     font-size: 30px;
   }
   @media (max-width: 408px) {
-    font-size: 23px;
+    font-size: 27px;
   }
 `
 export const SubText = styled.p`
@@ -47,8 +48,8 @@ export const SubText = styled.p`
     font-size: 22px;
   }
   @media (max-width: 408px) {
-    font-size: 16px;
-    margin-top: 1rem;
+    font-size: 20px;
+    margin-top: 3rem;
   } 
 `
 export const BtnGroup = styled.div`
@@ -75,5 +76,7 @@ export const BtnOrder = styled.button`
   }
   @media(max-width: 410px){
     margin: .6rem 0;
+    width: 150px;
+    font-size: 17px;
   }
 `

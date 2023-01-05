@@ -16,7 +16,7 @@ const Navbar = () => {
                     <ListItem><Link to={'/'}>Home</Link></ListItem>
                     <ListItem><Link to={'/'}>Jo'y band qilish</Link></ListItem>
                     <ListItem><Link to={'/'}>menyu</Link></ListItem>
-                    <ListItem><a href="tel:998335558080" className={'list-item-small'}>Qongiroq qilish</a></ListItem>
+                    <ListItem><a href="tel:998335558080" className={'list-item-small'}>+998 33 555-80-80</a></ListItem>
                 </ListGroup>
                 <CallButton href="tel:998335558080">Qongiroq qilish</CallButton>
                 <button onClick={togglerBtn} className={`nav-toggle-btn ${state ? "active" :""}`}/>

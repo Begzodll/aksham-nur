@@ -8,7 +8,7 @@ const Home = () => {
                 <SubText>Biz sizni kutayotgan edik <br/> Biz sizni shirin taom bilan jazo'laymiz</SubText>
                 <BtnGroup>
                     <BtnOrder>Buyurtma berish</BtnOrder>
-                    <BtnOrder>Bo'glanish</BtnOrder>
+                    <BtnOrder> <a href="tel:998335558080">Bo'glanish</a></BtnOrder>
                 </BtnGroup>
             </ShadowContainer>
         </BannerBackground>
