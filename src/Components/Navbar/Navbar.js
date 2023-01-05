@@ -15,7 +15,7 @@ const Navbar = () => {
                 <ListGroup className={`${state ? "header-visible" : "header-hidden"}`}>
                     <ListItem><Link to={'/'}>Home</Link></ListItem>
                     <ListItem><Link to={'/'}>Jo'y band qilish</Link></ListItem>
-                    <ListItem><Link to={'/'}>Bo'glanish</Link></ListItem>
+                    <ListItem><Link to={'/'}>menyu</Link></ListItem>
                     <ListItem><a href="tel:998335558080" className={'list-item-small'}>Qongiroq qilish</a></ListItem>
                 </ListGroup>
                 <CallButton href="tel:998335558080">Qongiroq qilish</CallButton>
