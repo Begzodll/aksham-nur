@@ -1,10 +1,23 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 .list-item-small {
   color: #FFFF00;
   text-transform: uppercase;
   text-align: center;
   display: none;
 }
-
+a{
+  text-decoration: none;
+  list-style: none;
+}
+li{
+  list-style: none;
+  text-decoration: none;
+}
 @media (max-width: 991.9px) {
   .list-item-small {
     display: block;
@@ -35,6 +48,7 @@
   margin: 1.8rem 0;
   z-index: 100;
   outline: none;
+  background: transparent;
   @media (max-width: 991.9px) {
     display: flex;
   }

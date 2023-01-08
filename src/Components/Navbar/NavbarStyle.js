@@ -22,6 +22,8 @@ export const Logo = styled.img`
 
 export const ListGroup = styled.ul`
   display: flex;
+  list-style: none;
+  text-decoration: none;
   @media (max-width: 991.9px) {
     position: fixed;
     left: 0;
@@ -31,16 +33,24 @@ export const ListGroup = styled.ul`
     width: 100%;
     height: 100%;
     z-index: 99;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(0, 0, 0, 0.98);
   }
   transition: 1s all ease;
 `
-
+export const Phone = styled.div`
+  display: none;
+  text-decoration: none;
+  @media(max-width: 991.9px){
+    display: block;
+  }
+`
 export const ListItem = styled.li`
   color: #FFFF00;
   margin: 2rem 2.7rem 0 0;
   text-transform: uppercase;
   font-size: 15px;
+  list-style: none;
+  text-decoration: none;
   @media (max-width: 991.9px){
     margin: 2rem 0 0 0;
   }
@@ -50,6 +60,7 @@ export const CallButton = styled.a`
   color: #FFFF00;
   text-transform: uppercase;
   margin-top: 1.9rem;
+  background: transparent;
   @media (max-width: 991.9px) {
     display: none;
   }
