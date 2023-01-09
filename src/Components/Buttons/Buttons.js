@@ -38,6 +38,7 @@ export function ScrollTop() {
             }
         },
     }
+
     return <div className={Style.scrollTop}>
         {showTopBtn && (<motion.button
             onClick={goToTop}

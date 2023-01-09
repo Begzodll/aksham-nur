@@ -25,7 +25,7 @@ $yellow-color: #FFF000;
         font-size: 24px;
         font-weight: 700;
         line-height: 10px;
-        letter-spacing: 0em;
+        letter-spacing: 0;
         text-align: left;
       }
 
@@ -73,7 +73,7 @@ $yellow-color: #FFF000;
   &__line{
     width: 100%;
     margin-top: 40px;
-    border: 1px solid #653B9B;
+    border: 1px solid #FFF000;
   }
 
   &__contact{
@@ -112,7 +112,7 @@ $yellow-color: #FFF000;
         svg{
           margin: 0 14px;
           path{
-            fill: #653B9B;
+            fill: #334155;
             &:hover{
               cursor: pointer;
               fill:$yellow-color;
