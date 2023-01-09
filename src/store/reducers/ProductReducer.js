@@ -1,21 +1,21 @@
 import {createSlice} from "@reduxjs/toolkit";
-
+import {apiCall} from "../Action";
 
 const ProductReducer = createSlice({
     name: 'product',
     initialState: {
-        data:{
-            menu:[
-                {
-                    id:1,
-                    name:'bnasa',
-                    img:'src',
-                    desc:"bla bla",
-                    mainDesc:"main"
-                }
-            ]
-        }
+        info:[]
     },
-    reducers: []
+    reducers: {
+        getProduct:(state,action) => {
+            state.info = action.payload
+        }
+    }
 })
+export const getProductFunc = () => apiCall({
+    url:'/product/all',
+    method:'GET',
+    onSuccess:ProductReducer.actions.getProduct.type
+})
+
 export default ProductReducer.reducer

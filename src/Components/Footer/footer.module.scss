@@ -1,13 +1,14 @@
-$footer-bg: #371B5C;
-$text-color: #FFFFFF;
-$yellow-color: #F7C844;
-$red-color: rgb(248, 39, 39);
-$blue-color: rgba(73, 131, 255, 0.84);
+$footer-bg: #334155;
+$text-color: #f1f1f1;
+$yellow-color: #FFF000;
+//$red-color: rgb(248, 39, 39);
+//$blue-color: rgba(73, 131, 255, 0.84);
 .footer {
   background: $footer-bg;
   height: 583px;
   margin-top: 1rem;
   padding: 80px;
+  font-family: sans-serif;
   @media only screen and (max-width: 480px){
     padding: 30px 10px;
   }
@@ -21,7 +22,6 @@ $blue-color: rgba(73, 131, 255, 0.84);
       color: $text-color;
 
       p:nth-child(1) {
-        font-family: Proxima Nova;
         font-size: 24px;
         font-weight: 700;
         line-height: 10px;
@@ -30,7 +30,6 @@ $blue-color: rgba(73, 131, 255, 0.84);
       }
 
       p:nth-child(2) {
-        font-family: Proxima Nova;
         font-size: 16px;
         font-weight: 500;
         line-height: 5px;
@@ -84,38 +83,17 @@ $blue-color: rgba(73, 131, 255, 0.84);
     align-items: center;
     margin-top: 41px;
       &__title{
-        p:nth-child(1){
-          font-family: Proxima Nova;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: 2px;
-          letter-spacing: 0;
-          text-align: left;
-          text-transform: uppercase;
-          color: $red-color;
-          span{
-            color: $blue-color;
+        &__logo{
+          min-width: 120px;
+          height: 70px;
+          @media (max-width: 300px) {
+            width: 30px;
           }
-          @media (max-width: 330px) {
-            font-size: 14px;
-          }
-        }
-        p:nth-child(2){
-          font-family: Proxima Nova;
-          font-size: 8px;
-          font-weight: 400;
-          line-height: 0;
-          letter-spacing: 0.1em;
-          text-align: left;
-          text-transform: uppercase;
-          margin-top: 1rem;
-          color: $yellow-color;
         }
       }
     &__media{
       margin-top: 2rem;
       p{
-        font-family: Proxima Nova;
         font-size: 18px;
         font-weight: 300;
         line-height: 15px;
@@ -148,7 +126,6 @@ $blue-color: rgba(73, 131, 255, 0.84);
     }
     &__number{
       a{
-        font-family: Proxima Nova;
         font-size: 16px;
         font-weight: 400;
         line-height: 1px;
@@ -164,7 +141,6 @@ $blue-color: rgba(73, 131, 255, 0.84);
         }
       }
       p:nth-child(2){
-        font-family: Proxima Nova;
         font-size: 8px;
         font-weight: 400;
         line-height: 13px;
@@ -180,7 +156,6 @@ $blue-color: rgba(73, 131, 255, 0.84);
     display: none;
     margin-top: 2rem;
     p{
-      font-family: Proxima Nova;
       font-size: 18px;
       font-weight: 300;
       line-height: 15px;

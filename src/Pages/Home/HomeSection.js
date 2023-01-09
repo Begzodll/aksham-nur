@@ -1,5 +1,6 @@
 import {BannerBackground, BtnGroup, BtnOrder, MainText, ShadowContainer, SubText} from "./style/HeaderStyle";
 import banner from "../../Assets/images/home-bg/v-3.jpg";
+
 const HomeSection = () => {
     return (
         <div>

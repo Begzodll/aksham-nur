@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const BannerBackground = styled.div`
   width: 100%;
-  height: 600px;
+  height: 650px;
   background-image: url(${({src}) => src});
   background-repeat: no-repeat;
   background-position: center;
@@ -27,14 +27,15 @@ export const MainText = styled.p`
   @media (max-width: 730px) {
     font-size: 47px;
   }
-  @media (max-width: 596px) {
+  @media (max-width: 650px) {
     font-size: 40px;
   }
-  @media (max-width: 505px) {
+  @media (max-width: 575px) {
     font-size: 30px;
   }
-  @media (max-width: 408px) {
+  @media (max-width: 420px) {
     font-size: 27px;
+    text-align: center;
   }
 `
 export const SubText = styled.p`

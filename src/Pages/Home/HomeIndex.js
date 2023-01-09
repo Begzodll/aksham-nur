@@ -4,7 +4,7 @@ const HomeIndex = () => {
     return(
         <div>
             <HomeSection/>
-            {/*<MenuSection/>*/}
+            <MenuSection/>
         </div>
     )
 }

@@ -1,14 +1,40 @@
-import {ContainerFluid,Container, MenuHeaderText} from "./style/MenuStyle";
+import {
+    ContainerFluid,
+    Container,
+    Block,
+    Card,
+    MenuTitle,
+    ProductDesc,
+    ProductName,
+    ProductImage
+} from "./style/MenuStyle";
+import {connect} from "react-redux";
+import {getProductFunc} from "../../store/reducers/ProductReducer";
 
-const MenuSection = () => {
+const MenuSection = ({info}) => {
+
+
     return (
         <ContainerFluid>
+            <MenuTitle>Bizning Taomnomaniz</MenuTitle>
             <Container>
-            <MenuHeaderText className={'uppercase'}>Bizning Taomlarimiz</MenuHeaderText>
-
+                <Block>
+                    {/*{*/}
+                    {/*    data.map((item, index) => (*/}
+                    {/*        <div key={index}>*/}
+                    {/*            <Card>*/}
+                    {/*                <ProductImage src={item.img} alt=""/>*/}
+                    {/*                <ProductName>{item.name}</ProductName>*/}
+                    {/*                <ProductDesc>{item.desc}</ProductDesc>*/}
+                    {/*            </Card>*/}
+                    {/*        </div>*/}
+                    {/*    ))*/}
+                    {/*}*/}
+                </Block>
             </Container>
-
         </ContainerFluid>
     )
 }
-export default MenuSection
+export default connect(
+    ({dataProduct: {info}}) => ({info}),
+    {getProductFunc})(MenuSection)

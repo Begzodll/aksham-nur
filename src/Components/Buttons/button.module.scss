@@ -1,0 +1,219 @@
+$black-color: #000000;
+$yellow-color: #F7C844;
+$blue-color: #371B5C;
+$union-yellow: url('../../Assets/svg/Union.png');
+$union-blue: url('../../Assets/svg/blue-union.png');
+$yellow-union-swiper-right: url('../../Assets/svg/yellow-union-swiper.png');
+$yellow-union-swiper-left: url('../../Assets/svg/yellow-union-swipers.png');
+.button {
+    width: 259px;
+    height: 48px;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background: $yellow-color;
+    border: none;
+    cursor: pointer;
+&::before {
+     content: "Ro‘yxatdan o‘tish";
+     text-transform: uppercase;
+     position: absolute;
+     left: 30px;
+ }
+
+&::after {
+     content: '';
+     position: absolute;
+     background: $union-blue;
+     width: 26px;
+     height: 9px;
+     top: 20px;
+     right: 31px;
+ }
+
+@media (min-width: 320px) and (max-width: 480px) {
+    width: 230px;
+&::before {
+     font-size: 14px;
+ }
+}
+@media (max-width: 320px) {
+    width: 100%;
+    flex-direction: column;
+    span {
+        font-size: 12px;
+    }
+}
+}
+
+.double {
+    width: 140px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+@media only screen and (max-width: 576px) {
+    display: none;
+}
+
+button {
+    width: 65px;
+    height: 48px;
+    outline: none;
+    border: 1px solid;
+    background: transparent;
+}
+
+&__firstBtn {
+&::before {
+     content: '';
+     position: absolute;
+     left: 20px;
+     top: 21px;
+     width: 24px;
+     height: 9px;
+     background: $yellow-union-swiper-left;
+ }
+}
+
+&__secondBtn {
+&::before {
+     content: '';
+     position: absolute;
+     right: 20px;
+     top: 21px;
+     width: 26px;
+     height: 9px;
+     background: $yellow-union-swiper-right;
+ }
+}
+}
+
+.hoverBtn {
+
+    width: 259px;
+    height: 48px;
+    border: 1px solid $blue-color;
+    outline: none;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: color .3s;
+    padding: 0;
+
+&::before {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 50px;
+     top: 0;
+     left: 0;
+     background: $blue-color;
+     transition: width .5s;
+ }
+
+&:hover {
+svg {
+path {
+    transition: 1s;
+    fill: $yellow-color;
+}
+}
+
+&::before {
+     width: 100%;
+ }
+
+&::after {
+     color: $yellow-color;
+ }
+}
+
+
+&::after {
+     content: 'Ro‘yxatdan o‘tish';
+     text-transform: uppercase;
+     position: absolute;
+     top: 15px;
+     left: 30px;
+     color: $blue-color;
+     transition: 1s;
+ }
+
+svg {
+    z-index: 9;
+    position: absolute;
+    top: 19px;
+    right: 30px;
+
+path {
+    fill: $blue-color;
+}
+}
+
+@media (max-width: 480px) {
+    width: 100%;
+&::after {
+     font-size: 13px;
+     top: 13px;
+     left: 14px;
+ }
+}
+}
+
+.scrollTop{
+    position: relative;
+    transition: all 1s ;
+button{
+    width: 40px;
+    height: 40px;
+    background: $yellow-color;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    right: 1rem;
+    z-index: 20;
+    justify-content: center;
+    animation: Movebtn .3s linear;
+    border: none;
+&::after{
+     content: '';
+     position: absolute;
+     top: 18px;
+     left: 8px;
+     width: 15px;
+     height: 2px;
+     background: #FFFFFF;
+     transform: rotate(-55deg);
+ }
+&::before{
+     content: '';
+     position: absolute;
+     top: 18px;
+     right: 8px;
+     width: 15px;
+     height: 2px;
+     background: #FFFFFF;
+     transform: rotate(55deg);
+ }
+}
+}
+@keyframes Movebtn {
+    0%{
+        transform: translateY(0px);
+    }
+    25%{
+        transform: translateY(20px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    75%{
+        transform: translateY(-20px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}

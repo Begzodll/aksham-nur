@@ -7,6 +7,7 @@ import App from "./App";
 import store from "./store/store";
 
 import './Assets/css/global.scss';
+import 'swiper/css';
 
 const container = document.getElementById('root')
 const root = createRoot(container)
