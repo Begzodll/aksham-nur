@@ -22,7 +22,6 @@ const MenuSection = ({info, getProductFunc}) => {
         getProductFunc()
     }, [getProductFunc])
 
-    console.log(info)
     return (
         <ContainerFluid>
             <MenuTitle>Bizning Taomnomaniz</MenuTitle>

@@ -14,7 +14,7 @@ export const ShadowContainer = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  background: rgba(0, 0, 0, 0.83);
+  background: rgba(0, 0, 0, 0.63);
 `
 export const MainText = styled.p`
   color: #cbcaca;
@@ -45,7 +45,7 @@ export const SubText = styled.p`
   align-items: center;
   text-align: center;
   font-size: 25px;
-  margin-top: 2rem;
+  margin-top: 4rem;
   @media (max-width: 505px) {
     font-size: 22px;
   }
@@ -64,14 +64,15 @@ export const BtnGroup = styled.div`
   }
 `
 export const BtnOrder = styled.button`
-  padding: 8px 10px;
+  padding: 10px 20px;
   color: #FFFF00;
   border: 1px solid #FFFF00;
-  transition: .5s all ease;
+  transition: .2s all ease;
   margin: 4rem 1rem;
-  width: 150px;
+  min-width: 150px;
   background: transparent;
   text-transform: uppercase;
+  cursor: pointer;
   &:hover {
     background: rgba(0, 0, 0, 0.6);
     color: #cbcaca;
@@ -79,8 +80,8 @@ export const BtnOrder = styled.button`
   }
 
   @media (max-width: 410px) {
-    margin: .6rem 0;
-    width: 150px;
-    font-size: 17px;
+    margin: 1rem 0;
+    width: 70%;
+    font-size: 14px;
   }
 `

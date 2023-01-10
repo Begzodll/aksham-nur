@@ -77,6 +77,29 @@ $yellow-union-swiper-left: url('../../Assets/svg/yellow-union-swipers.png');
   }
 }
 
+.DarkBtn{
+  width: 100px;
+  height: 100px;
+  margin: 15px 10px;
+  border-radius: 10px;
+  background-color: #212121;
+  box-shadow: 3px 3px 5px #1b1a1a, -3px -3px 5px #2b2b2b;
+  border: none;
+  color: #f1b13c;
+  text-transform: uppercase;
+  padding: 10px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  &:hover{
+    box-shadow: inset 3px 3px 5px #1b1a1a, inset -3px -3px 5px #2b2b2b;
+    transform: scale(0.98);
+  }
+  &:active {
+    box-shadow: inset 3px 3px 5px #1b1a1a, inset -3px -3px 5px #2b2b2b;
+    transform: scale(0.98);
+    color: #32363d;
+  }
+}
 
 
 .scrollTop {

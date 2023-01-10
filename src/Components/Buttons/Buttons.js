@@ -7,6 +7,9 @@ export function NeonBtn({title}){
         {title}
     </button>
 }
+export function DarkHeaderBtn({title}){
+    return <button className={Style.DarkBtn}>{title}</button>
+}
 export const DoubleButton = ({color, prev, next}) => {
     return <div className={Style.double}>
         <button style={{borderColor: color}} className={Style.double__firstBtn} ref={prev}/>
