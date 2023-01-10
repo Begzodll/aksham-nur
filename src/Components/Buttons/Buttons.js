@@ -1,7 +1,12 @@
 import React, {useState, useEffect} from "react";
 import {motion} from "framer-motion";
 import Style from './button.module.scss'
-import svg from '../../Assets/svg/about-medal.png'
+
+export function NeonBtn({title}){
+    return <button className={Style.NeonBtn}>
+        {title}
+    </button>
+}
 export const DoubleButton = ({color, prev, next}) => {
     return <div className={Style.double}>
         <button style={{borderColor: color}} className={Style.double__firstBtn} ref={prev}/>

@@ -88,7 +88,7 @@ function Footer() {
             </div>
 
             <div className={Style.footer__contact__media}>
-                <p>&copy; Akshamnur cafe | Invented 2023 </p>
+                <p>&copy; Akshamnur cafe | Invented in 2022 </p>
                 <div className={Style.footer__contact__media__icon}>
                     {/*{*/}
                     {/*    content.footer.svg.map((item, index) => (*/}

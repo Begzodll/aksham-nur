@@ -6,6 +6,7 @@ $text-color: rgba(0, 0, 0, 0.5);
 .register {
   padding: 80px 40px;
   width: 100%;
+  background: #f1f5f9;
   @media (max-width: 467px) {
     padding: 20px 20px;
   }
@@ -16,7 +17,11 @@ $text-color: rgba(0, 0, 0, 0.5);
     height: auto;
     padding: 40px 80px;
     overflow: hidden;
-    box-shadow: 1px 1px 9px 1px #94a3b8;
+    box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+    -6px -6px 10px rgba(255, 255, 255, .5),
+    6px 6px 8px rgba(255, 255, 255, .075),
+    6px 6px 10px rgba(0, 0, 0, .15);
+    background: transparent;
     @media (max-width: 900px) {
       padding: 40px;
     }
@@ -26,7 +31,8 @@ $text-color: rgba(0, 0, 0, 0.5);
 
     &__title {
       p:nth-child(1) {
-        font-size: 32px;
+        font-size: 28px;
+        text-transform: uppercase;
         font-weight: 700;
         line-height: 39px;
         letter-spacing: 0;
@@ -69,6 +75,7 @@ $text-color: rgba(0, 0, 0, 0.5);
           padding: 15px;
           outline: none;
           border: 1px solid #ccc;
+          background: transparent;
           &::placeholder {
             color: $text-color;
           }

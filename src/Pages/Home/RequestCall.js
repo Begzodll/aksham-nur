@@ -51,7 +51,7 @@ function RequestCall({title, titleAbout, setModal}) {
         <section id={'register'} className={Style.register}>
             <div className={Style.register__case}>
                 <div className={Style.register__case__title}>
-                    <p>Jo'y band qilish</p>
+                    <p>Joy band qilish</p>
                 </div>
                 <div className={Style.register__case__form}>
                     <form onSubmit={null}>

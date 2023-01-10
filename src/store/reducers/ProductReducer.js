@@ -8,7 +8,7 @@ const ProductReducer = createSlice({
     },
     reducers: {
         getProduct:(state,action) => {
-            state.info = action.payload
+            state.info = action.payload.data
         }
     }
 })
