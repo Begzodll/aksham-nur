@@ -19,6 +19,10 @@ const Navbar = () => {
         }
     }, [location.pathname])
 
+
+    
+
+
     return (
         <ContainerFluid className={`${block}`}>
             <Container>

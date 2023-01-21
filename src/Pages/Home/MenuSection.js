@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import {getProductFunc} from "../../store/reducers/ProductReducer";
 import {NeonBtn} from "../../Components/Buttons/Buttons";
@@ -18,9 +18,16 @@ import {
 
 const MenuSection = ({info, getProductFunc}) => {
 
+    const [selectedCard, setSelectedCard] = useState([])
+
+    const handleClick = (item) => {
+        console.log(item)
+    }
+
     useEffect(() => {
         getProductFunc()
     }, [getProductFunc])
+
 
     return (
         <ContainerFluid>
@@ -41,7 +48,7 @@ const MenuSection = ({info, getProductFunc}) => {
                                         <ProductDesc><SubTitle>Price:</SubTitle> 35.000 sum</ProductDesc>
                                         <BtnGroup>
                                             <NeonBtn title={'Batafsil'}/>
-                                            <NeonBtn title={"Qo'shish"}/>
+                                            <NeonBtn title={"Qo'shish"}  data={item} setFunc={handleClick}/>
                                         </BtnGroup>
                                     </SizeCard>
                                 </Card>

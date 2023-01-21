@@ -7,10 +7,9 @@ const Admin = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault()
-        const formData = new FormData();
-        formData.append("selectedFile", selectedFile);
-
-        console.log(formData)
+        // const formData = new FormData();
+        // formData.append("selectedFile", selectedFile);
+        // console.log(formData)
         // try {
         //     const response = await axios.post("", formData, {
         //         headers: {"Content-Type": "multipart/form-data"}
@@ -22,6 +21,9 @@ const Admin = () => {
         // } catch(error) {
         //     console.log(error)
         // }
+
+        
+
     }
 
     const handleFileSelect = (event) => setSelectedFile(event.target.files[0])

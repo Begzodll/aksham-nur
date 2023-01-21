@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 import {motion} from "framer-motion";
 import Style from './button.module.scss'
 
-export function NeonBtn({title}){
-    return <button className={Style.NeonBtn}>
+export function NeonBtn({title,data,setFunc}){
+    return <button className={Style.NeonBtn} onClick={data ? ()=>setFunc(data): null}>
         {title}
     </button>
 }
