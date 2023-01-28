@@ -45,10 +45,8 @@ function RequestCall({title, titleAbout, setModal}) {
         setNumber(valPhone)
     }
 
-    // dd3512c4-7f92-435e-a905-39055ffbd9ca
-
     return (
-        <section id={'register'} className={Style.register}>
+        <section id={'place'} className={Style.register}>
             <div className={Style.register__case}>
                 <div className={Style.register__case__title}>
                     <p>Joy band qilish</p>

@@ -18,4 +18,7 @@ export const getProductFunc = () => apiCall({
     onSuccess:ProductReducer.actions.getProduct.type
 })
 
-export default ProductReducer.reducer
+export default ProductReducer.reducer;
+
+// https://api.telegram.org/bot5914837575:AAEBVDwIgzd5K1ekwX--vnZ6wiT9svn9PyA/sendMessage?chat_id=-1001611008926&text=Hello
+// Example : https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${data}

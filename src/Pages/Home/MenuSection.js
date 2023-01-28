@@ -22,6 +22,7 @@ const MenuSection = ({info, getProductFunc}) => {
 
     const handleClick = (item) => {
         console.log(item)
+        localStorage.setItem('box', JSON.stringify([{id:1,name:'asd'},{id:2,name:'zxc'}]))
     }
 
     useEffect(() => {
@@ -31,6 +32,7 @@ const MenuSection = ({info, getProductFunc}) => {
 
     return (
         <ContainerFluid>
+            <section id={'menu'}/>
             <MenuTitle>Bizning Taomnomaniz</MenuTitle>
             <Container>
                 <Block>

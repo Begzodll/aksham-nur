@@ -19,10 +19,6 @@ const Navbar = () => {
         }
     }, [location.pathname])
 
-
-    
-
-
     return (
         <ContainerFluid className={`${block}`}>
             <Container>
@@ -31,8 +27,8 @@ const Navbar = () => {
                 </Link>
                 <ListGroup className={`${state ? "header-visible" : "header-hidden"}`}>
                     <Link to={'/'} style={{textDecoration: 'none'}}><ListItem>Home</ListItem></Link>
-                    <Link to={'/'} style={{textDecoration: 'none'}}><ListItem>Jo'y band qilish</ListItem></Link>
-                    <Link to={'/'} style={{textDecoration: 'none'}}><ListItem>menyu</ListItem></Link>
+                    <a href={'#place'} style={{textDecoration: 'none'}}><ListItem>Jo'y band qilish</ListItem></a>
+                    <a href={'#menu'} style={{textDecoration: 'none'}}><ListItem>Menu</ListItem></a>
                     <Phone><Link to="tel:998335558080" style={{textDecoration: 'none'}}><ListItem>
                         Qongiroq
                         qilish</ListItem></Link></Phone>

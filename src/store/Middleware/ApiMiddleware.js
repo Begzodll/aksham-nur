@@ -9,7 +9,6 @@ const ApiMiddleware = ({dispatch})=>(next)=>(action)=>{
     next(action)
 
     const { url, method,data, onSuccess, onFail } = action.payload
-    console.log(url)
     axios({
         baseURL:'http://18.183.248.93',
         url,
