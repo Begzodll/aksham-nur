@@ -48,7 +48,6 @@ export const Block = styled.div`
 export const Box = styled.div`
   width: 100%;
   height: 400px;
-  background: blue;
 `
 export const MenuTitle = styled.div`
   font-size: 42px;

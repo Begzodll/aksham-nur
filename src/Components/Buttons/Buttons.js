@@ -1,11 +1,17 @@
 import React, {useState, useEffect} from "react";
 import {motion} from "framer-motion";
-import Style from './button.module.scss'
+import Style from './button.module.scss';
+import {Link} from "react-router-dom";
 
 export function NeonBtn({title,data,setFunc}){
     return <button className={Style.NeonBtn} onClick={data ? ()=>setFunc(data): null}>
         {title}
     </button>
+}
+export function NeonLinkBtn({title}){
+    return <Link to={'/orders'} className={Style.NeonBtn}>
+        {title}
+    </Link>
 }
 export function DarkHeaderBtn({title}){
     return <button className={Style.DarkBtn}>{title}</button>

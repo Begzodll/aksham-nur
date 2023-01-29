@@ -1,18 +1,37 @@
-import {BasketMainContainer} from "./BasketStyle";
+import {connect} from "react-redux";
 import {useEffect, useState} from "react";
+import {BasketMainContainer, CountProduct} from "./BasketStyle";
+import {Link} from "react-router-dom";
+const Basket = ({basket}) => {
 
-const Basket = () => {
+    const [productList, setProductList] = useState([])
+    const basketList = localStorage.getItem('basket')
 
-    const [visibleBtn, setVisibleBtn] = useState(false)
+    useEffect(() => {
+        if (basketList)
+            setProductList(JSON.parse(basketList))
+    }, [basketList])
 
-    console.log(window.scrollY)
-
-
+    let hours = 24;
+    let now = new Date().getTime();
+    let setupTime = localStorage.getItem('setupTime');
+    if (setupTime == null) {
+        localStorage.setItem('setupTime', JSON.stringify(now))
+    } else {
+        if (now - setupTime > hours * 60 * 60 * 1000) {
+            localStorage.clear()
+            localStorage.setItem('setupTime', JSON.stringify(now));
+        }
+    }
 
     return (
-        <BasketMainContainer>
-
-        </BasketMainContainer>
+        <Link to={'orders'}>
+            <BasketMainContainer>
+                <CountProduct>{
+                    productList.length
+                }</CountProduct>
+            </BasketMainContainer>
+        </Link>
     )
 }
-export default Basket;
+export default connect(({dataProduct: {basket}}) => ({basket}), null)(Basket)

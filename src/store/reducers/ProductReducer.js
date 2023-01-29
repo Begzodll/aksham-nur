@@ -4,19 +4,35 @@ import {apiCall} from "../Action";
 const ProductReducer = createSlice({
     name: 'product',
     initialState: {
-        info:[]
+        info: [],
+        basket: []
     },
     reducers: {
-        getProduct:(state,action) => {
+        getProduct: (state, action) => {
             state.info = action.payload.data
+        },
+        setBasket: (state, action) => {
+            state.basket.push(action.payload)
+            if (state.basket.length > 0) {
+                localStorage.setItem("basket", JSON.stringify(state.basket))
+            }
         }
     }
 })
 export const getProductFunc = () => apiCall({
-    url:'/product/all',
-    method:'GET',
-    onSuccess:ProductReducer.actions.getProduct.type
+    url: '/product/all',
+    method: 'GET',
+    onSuccess: ProductReducer.actions.getProduct.type
 })
+
+export const clickOrder = (data) => {
+    return dispatch => {
+        dispatch({
+            type: ProductReducer.actions.setBasket.type,
+            payload: data
+        })
+    }
+}
 
 export default ProductReducer.reducer;
 

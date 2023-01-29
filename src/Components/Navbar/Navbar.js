@@ -26,10 +26,10 @@ const Navbar = () => {
                     <Logo src={logo} alt={'asd'}/>
                 </Link>
                 <ListGroup className={`${state ? "header-visible" : "header-hidden"}`}>
-                    <Link to={'/'} style={{textDecoration: 'none'}}><ListItem>Home</ListItem></Link>
-                    <a href={'#place'} style={{textDecoration: 'none'}}><ListItem>Jo'y band qilish</ListItem></a>
-                    <a href={'#menu'} style={{textDecoration: 'none'}}><ListItem>Menu</ListItem></a>
-                    <Phone><Link to="tel:998335558080" style={{textDecoration: 'none'}}><ListItem>
+                    <Link to={'/'} style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>Home</ListItem></Link>
+                    <Link to={'/'} style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>Jo'y band qilish</ListItem></Link>
+                    <Link to={'/'} style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>Menu</ListItem></Link>
+                    <Phone><Link to="tel:998335558080" style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>
                         Qongiroq
                         qilish</ListItem></Link></Phone>
                 </ListGroup>

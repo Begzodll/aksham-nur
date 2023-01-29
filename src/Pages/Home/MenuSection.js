@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {getProductFunc} from "../../store/reducers/ProductReducer";
-import {NeonBtn} from "../../Components/Buttons/Buttons";
+import {clickOrder, getProductFunc} from "../../store/reducers/ProductReducer";
+import {NeonBtn, NeonLinkBtn} from "../../Components/Buttons/Buttons";
 import {
     ContainerFluid,
     Container,
@@ -16,13 +16,11 @@ import {
     BtnGroup
 } from "./style/MenuStyle";
 
-const MenuSection = ({info, getProductFunc}) => {
+const MenuSection = ({info, getProductFunc, clickOrder}) => {
 
-    const [selectedCard, setSelectedCard] = useState([])
 
     const handleClick = (item) => {
-        console.log(item)
-        localStorage.setItem('box', JSON.stringify([{id:1,name:'asd'},{id:2,name:'zxc'}]))
+        clickOrder(item)
     }
 
     useEffect(() => {
@@ -49,8 +47,8 @@ const MenuSection = ({info, getProductFunc}) => {
                                             Praesentium.</ProductDesc>
                                         <ProductDesc><SubTitle>Price:</SubTitle> 35.000 sum</ProductDesc>
                                         <BtnGroup>
-                                            <NeonBtn title={'Batafsil'}/>
-                                            <NeonBtn title={"Qo'shish"}  data={item} setFunc={handleClick}/>
+                                            <NeonLinkBtn title={'Savatga otish'}/>
+                                            <NeonBtn title={"Qo'shish"} data={item} setFunc={handleClick}/>
                                         </BtnGroup>
                                     </SizeCard>
                                 </Card>
@@ -64,4 +62,4 @@ const MenuSection = ({info, getProductFunc}) => {
 }
 export default connect(
     ({dataProduct: {info}}) => ({info}),
-    {getProductFunc})(MenuSection)
+    {getProductFunc, clickOrder})(MenuSection)
