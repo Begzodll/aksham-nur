@@ -5,7 +5,16 @@ const ProductReducer = createSlice({
     name: 'product',
     initialState: {
         info: [],
-        basket: []
+        basket: [],
+        data:[
+            {
+                id:1,
+                image:'',
+                description:"",
+                price:2,
+                category:""
+            }
+        ]
     },
     reducers: {
         getProduct: (state, action) => {

@@ -9,12 +9,22 @@ export const BannerBackground = styled.div`
   background-size: cover;
   background-attachment: fixed;
   position: relative;
+  @media (max-width: 400px) {
+    background-image: url(${({mobile}) => mobile});
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size:cover;
+    background-attachment: fixed;
+  }
 `
 export const ShadowContainer = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
   background: rgba(0, 0, 0, 0.63);
+  @media (max-width: 500px) {
+    background: rgba(0, 0, 0, 0.75);
+  }
 `
 export const MainText = styled.p`
   color: #cbcaca;
@@ -73,6 +83,7 @@ export const BtnOrder = styled.button`
   background: transparent;
   text-transform: uppercase;
   cursor: pointer;
+
   &:hover {
     background: rgba(0, 0, 0, 0.6);
     color: #cbcaca;
