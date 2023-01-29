@@ -11,9 +11,8 @@ export const BannerBackground = styled.div`
   position: relative;
   @media (max-width: 400px) {
     background-image: url(${({mobile}) => mobile});
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size:cover;
+    background-size: cover;
+    background-position: left;
     background-attachment: fixed;
   }
 `
@@ -23,7 +22,7 @@ export const ShadowContainer = styled.div`
   position: absolute;
   background: rgba(0, 0, 0, 0.63);
   @media (max-width: 500px) {
-    background: rgba(0, 0, 0, 0.75);
+    background: rgba(0, 0, 0, 0.65);
   }
 `
 export const MainText = styled.p`
