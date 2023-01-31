@@ -30,19 +30,30 @@ export const Container = styled.div`
     padding: 0 70px;
   }
   @media(max-width:430px){
-    padding: 0 20px;
+    padding: 0 30px;
   }
 ;
 `
 export const Block = styled.div`
   display: grid;
   grid-gap: 40px;
-  grid-template-columns: auto auto auto;
-  @media(max-width:1024px){
-    grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 33% 33% 33%;
+  @media (max-width: 1200px) {
+    grid-gap: 20px;
   }
-  @media(max-width:590px){
-    grid-template-columns:  auto;
+  @media (max-width: 1100px) {
+    grid-gap: 15px;
+  }
+  @media(max-width:1024px){
+    grid-template-columns: 48% 48%;
+  }
+  @media(max-width:610px){
+    grid-template-columns:  100%;
+  }
+  @media(max-width:400px){
+    grid-template-columns:  100%;
   }
 `
 export const Box = styled.div`
@@ -71,13 +82,15 @@ export const MenuTitle = styled.div`
   }
 `
 export const Card = styled.div`
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
   -6px -6px 10px rgba(255, 255, 255, .5),
   6px 6px 8px rgba(255, 255, 255, .075),
   6px 6px 10px rgba(0, 0, 0, .15);
   width: 100%;
-  height: auto;
+  height: 522px;
   cursor: pointer;
   padding: 0 1rem;
   transition: .2s all ease;
@@ -87,6 +100,15 @@ export const Card = styled.div`
     2px 2px 2px rgba(255, 255, 255, .05),
     2px 2px 4px rgba(0, 0, 0, .1);
   }
+  @media(max-width:1100px){
+    width: 280px;
+  }
+  @media(max-width: 600px){
+    height: auto;
+    margin: .5rem 0;
+    width: 100%;
+  }
+  
 `
 export const SizeCard = styled.div`
   padding: 1rem .5rem;
@@ -100,6 +122,7 @@ export const ProductName = styled.p`
 `
 export const ProductDesc = styled.p`
   margin: 1rem 0;
+  word-wrap: anywhere;
 `
 export const ProductImage = styled.img`
   width: 100%;
@@ -108,4 +131,9 @@ export const ProductImage = styled.img`
 `
 export const BtnGroup = styled.div`
   display: flex;
+  justify-content: center;
+  align-items: center;
+  @media(max-width: 600px){
+    flex-direction: column;
+  }
 `

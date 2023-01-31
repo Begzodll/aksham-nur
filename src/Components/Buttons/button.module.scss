@@ -77,6 +77,15 @@ $yellow-union-swiper-left: url('../../Assets/svg/yellow-union-swipers.png');
     inset 2px 2px 2px rgba(255, 255, 255, .075),
     inset 2px 2px 4px rgba(0, 0, 0, .15);
   }
+  @media (max-width: 1101px) {
+    font-size: 11px;
+    margin:.5rem 1rem .5rem 0 ;
+  }
+  @media(max-width: 600px){
+    width: 80%;
+    height: 35px;
+    font-size: 13px;
+  }
 }
 
 .DarkBtn{
