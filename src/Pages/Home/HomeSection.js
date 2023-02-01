@@ -9,8 +9,8 @@ const HomeSection = () => {
                     <MainText>Aksham Nurga xush kelibsiz</MainText>
                     <SubText>Biz sizni kutayotgan edik <br/> Biz sizni shirin taom bilan jazo'laymiz</SubText>
                     <BtnGroup>
-                        <BtnOrder>Buyurtma berish</BtnOrder>
-                        <BtnOrder> <a href="tel:998335558080" style={{color:"#FFFF00"}}>Bo'glanish</a></BtnOrder>
+                        <BtnOrder href={'#menu'}>Buyurtma berish</BtnOrder>
+                        <BtnOrder href="tel:998335558080">Bo'glanish</BtnOrder>
                     </BtnGroup>
                 </ShadowContainer>
             </BannerBackground>

@@ -37,6 +37,7 @@ export const ListGroup = styled.ul`
   }
   transition: 1s all ease;
 `
+
 export const Phone = styled.div`
   display: none;
   text-decoration: none;

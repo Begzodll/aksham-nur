@@ -72,7 +72,7 @@ export const BtnGroup = styled.div`
     margin-top: 2rem;
   }
 `
-export const BtnOrder = styled.button`
+export const BtnOrder = styled.a`
   padding: 10px 20px;
   color: #FFFF00;
   border: 1px solid #FFFF00;
