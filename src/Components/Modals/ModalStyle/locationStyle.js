@@ -10,8 +10,9 @@ export const ContainerGetLocation = styled.div`
   z-index: 100;
 `
 export const ModalBlock = styled.div`
-  width: 50%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 2rem auto;
+  padding: 1rem;
   border-radius: 20px;
   box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
     -6px -6px 10px rgba(255, 255, 255, .5),
@@ -20,4 +21,26 @@ export const ModalBlock = styled.div`
 `
 export const ModalCard = styled.div`
   
+`
+export const MapStyle = styled.div`
+  width: 100%;
+  margin: 0 auto 2rem auto;
+`
+export const LocationBtn = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 1rem;
+  margin: 1.5rem auto;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #414141;
+  text-transform: uppercase;
+  font-size: 13px;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+    -6px -6px 10px rgba(255, 255, 255, .5),
+  6px 6px 8px rgba(255, 255, 255, .075),
+  6px 6px 10px rgba(0, 0, 0, .15);
+  border-radius: 20px;
 `
