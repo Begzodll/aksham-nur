@@ -24,7 +24,8 @@ export const ModalCard = styled.div`
 `
 export const MapStyle = styled.div`
   width: 100%;
-  margin: 0 auto 2rem auto;
+  margin: 2rem auto;
+  padding: 1.5rem;
 `
 export const LocationBtn = styled.button`
   display: flex;
@@ -38,6 +39,7 @@ export const LocationBtn = styled.button`
   color: #414141;
   text-transform: uppercase;
   font-size: 13px;
+  cursor: pointer;
   box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
     -6px -6px 10px rgba(255, 255, 255, .5),
   6px 6px 8px rgba(255, 255, 255, .075),

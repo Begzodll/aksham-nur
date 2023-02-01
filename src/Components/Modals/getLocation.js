@@ -10,21 +10,26 @@ import {
     GeolocationControl,
     Placemark
 } from "react-yandex-maps";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 
 const GetLocation = ({toggle}) => {
 
     const [selectedLocation, setSelectedLocation] = useState(null);
     const [currentLocation, setCurrentLocation] = useState(null);
-
-    const center = {
-        center: [41.2825125, 69.1392826],
+    const [findMe, setFindMe] = useState(null)
+    const options = {
+        center: findMe,
         zoom: 9
     };
+    
+    useEffect(()=>{
+        if(currentLocation == null){
+            setFindMe([41.2825125, 69.1392826])
+        }
+    },[currentLocation])
 
     const onMapClick = (e) => {
         setSelectedLocation(e)
-        console.log(selectedLocation)
     };
 
     const getLocation = () => {
@@ -32,7 +37,12 @@ const GetLocation = ({toggle}) => {
             .then((res) => res.json())
             .then((data) => setCurrentLocation(data))
             .catch(err => console.error(err))
+
+        if (currentLocation != null) {
+            setFindMe([currentLocation.latitude, currentLocation.longitude])
+        }
     };
+
 
     return (
         <div>
@@ -42,12 +52,12 @@ const GetLocation = ({toggle}) => {
                         <ModalBlock>
                             <ModalCard>
                                 <MapStyle>
-                                    <YMaps >
+                                    <YMaps>
                                         <Map
                                             modules={["Placemark", "geocode", "geoObject.addon.balloon"]}
                                             onClick={(e) => onMapClick(e._sourceEvent.originalEvent.coords)}
-                                            state={center}
-                                            style={{width:"100%",height:'auto'}}
+                                            state={options}
+                                            style={{width: "100%", height: 'auto'}}
                                         >
                                             {selectedLocation ? <Placemark geometry={selectedLocation}/> : null}
                                             <ZoomControl/>
@@ -56,8 +66,8 @@ const GetLocation = ({toggle}) => {
                                             <GeolocationControl/>
                                         </Map>
                                     </YMaps>
-                                    <LocationBtn onClick={getLocation}>Meni izlash</LocationBtn>
                                 </MapStyle>
+                                <LocationBtn onClick={getLocation}>Meni izlash</LocationBtn>
                             </ModalCard>
                         </ModalBlock>
                     </ContainerGetLocation> : ""
