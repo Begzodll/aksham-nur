@@ -32,20 +32,24 @@ const MenuSection = ({product, clickOrder}) => {
 
     const handleClick = (item) => clickOrder(item)
 
+    const handleChanged = (val) => {
+        setTabValue(val)
+        setActive(p => !p)
+    }
 
     return (
         <ContainerFluid>
             <section id={'menu'}/>
             <MenuTitle>Bizning Taomnomaniz</MenuTitle>
             <Stiky>
-                <NavigatorTab setVal={setTabValue} setActive={setActive} active={active} />
+                <NavigatorTab setVal={handleChanged} setActive={setActive} active={active}/>
             </Stiky>
             <Container>
                 <Block>
                     {
                         // eslint-disable-next-line array-callback-return
-                        data.filter(item=>{
-                            if( tabValue === "xammasi" ){
+                        data.filter(item => {
+                            if (tabValue === "xammasi") {
                                 return item
                             } else if (item.category.includes(tabValue)) {
                                 return item
