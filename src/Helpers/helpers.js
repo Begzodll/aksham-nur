@@ -16,3 +16,13 @@ export function useWindowDimensions(){
     return size;
 }
 
+export const TargetPhoneNumber = (val) => {
+    if (!val) return val;
+    const number = val.replace(/[^\d]/g, '');
+    const length = number.length;
+
+    if (length < 4) return length;
+    if (length < 7) return `+${number.slice(0, 3)} ${number.slice(3)}`;
+
+    return `+${number.slice(0, 3)} (${number.slice(3, 5)}) ${number.slice(5, 8,)} - ${number.slice(8, 12)}`;
+}

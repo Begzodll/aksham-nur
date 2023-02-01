@@ -37,6 +37,18 @@ const MenuSection = ({product, clickOrder}) => {
         setActive(p => !p)
     }
 
+    const formatPhoneNumber = (value) => {
+        if (!value) return value;
+        const phoneNumber = value.replace(/[^\d]/g, '');
+        const phoneLenght = phoneNumber.length;
+
+        if (phoneLenght < 4) return phoneNumber;
+        if (phoneLenght < 7) {
+            return `+${phoneNumber.slice(0, 3)} ${phoneNumber.slice(3)}`;
+        }
+        return `+${phoneNumber.slice(0, 3)} (${phoneNumber.slice(3, 5)}) ${phoneNumber.slice(5, 8,)} - ${phoneNumber.slice(8, 12)}`;
+    }
+
     return (
         <ContainerFluid>
             <section id={'menu'}/>

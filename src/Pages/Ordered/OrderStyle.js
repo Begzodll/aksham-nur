@@ -99,3 +99,52 @@ export const NeonBtn = styled.button`
 export const SizeCards = styled.div`
     margin: 1rem;
 `
+export const BillField = styled.div`
+  height: auto;
+  margin: 4rem 0 0 0;
+  padding: 1rem;
+`
+export const InputGroup = styled.div`
+  width: 55%;
+  height: auto;
+  padding: 2rem 2rem;
+  border-radius: 30px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+    -6px -6px 10px rgba(255, 255, 255, .5),
+  6px 6px 8px rgba(255, 255, 255, .075),
+  6px 6px 10px rgba(0, 0, 0, .15);
+  @media(max-width: 1200px){
+    flex-direction: column;
+  }
+  @media(max-width: 700px){
+    width: 80%;
+    padding: 2rem 0;
+  }
+  @media(max-width: 420px){
+    width: 100%;
+    padding: 2rem 0;
+  }
+`
+export const InputItem = styled.input`
+  width: 100%;
+    margin: 0 1rem;
+  border:none;
+  outline: none;
+  padding: 10px 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #414141;
+  background: transparent;
+  @media(max-width: 1200px){
+    width: 80%;
+    margin: 1rem 0;
+  }
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+    -6px -6px 10px rgba(255, 255, 255, .5),
+  6px 6px 8px rgba(255, 255, 255, .075),
+  6px 6px 10px rgba(0, 0, 0, .15);
+`

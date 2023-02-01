@@ -2,7 +2,7 @@ import React, {useRef} from "react";
 import Style from './footer.module.scss';
 
 import {DoubleButton} from "../Buttons/Buttons";
-import {useWindowDimensions} from "../../Helpers/WindowSize";
+import {useWindowDimensions} from "../../Helpers/helpers";
 
 import {Navigation, Autoplay} from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';

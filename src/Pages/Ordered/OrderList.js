@@ -1,12 +1,26 @@
 import {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {HeaderText, OrderContainer, CardGroup, CardItem, NeonBtn, SizeCards} from "./OrderStyle";
+import GetLocation from "../../Components/Modals/getLocation";
+import {
+    HeaderText,
+    OrderContainer,
+    CardGroup,
+    CardItem,
+    NeonBtn,
+    SizeCards,
+    BillField,
+    InputGroup,
+    InputItem
+} from "./OrderStyle";
 import {ContainerFluid, ProductDesc, ProductImage, ProductName, SubTitle} from "../Home/style/MenuStyle";
 import {Link} from "react-router-dom";
+import {TargetPhoneNumber} from "../../Helpers/helpers";
 
 const OrderList = () => {
     const [mealList, setMealList] = useState([]);
-    const [chosenItem, setChosenItem] = useState([]);
+    const [getNumber, setGetNumber] = useState('+998');
+    const [name, setName] = useState('');
+    const [togler, setTogler] = useState(false);
     const basketMealList = localStorage.getItem('basket');
 
     useEffect(() => {
@@ -17,6 +31,15 @@ const OrderList = () => {
     const deleteItem = (item) => {
         localStorage.removeItem('basket');
         window.location.reload()
+    }
+
+    const getPhone = (e) => {
+        const valPhone = TargetPhoneNumber(e.target.value)
+        setGetNumber(valPhone)
+    }
+
+    const getCurrentLocation = () => {
+
     }
 
     return (
@@ -48,6 +71,16 @@ const OrderList = () => {
                                 ))
                             }
                         </CardGroup>
+                        <BillField>
+                            <InputGroup>
+                                <InputItem placeholder={'Ismingiz'} onChange={(e) => setName(e.target.value)}/>
+                                <InputItem placeholder={'Telefon raqamingiz'} type={'text'}
+                                           onChange={(e) => getPhone(e)} value={getNumber}/>
+                                <InputItem value={'Manzil kiritish'} type={'button'}
+                                           onClick={() => setTogler(p => !p)}/>
+                            </InputGroup>
+                        </BillField>
+                        <GetLocation toggle={togler}/>
                     </div>
                     :
                     <HeaderText>
@@ -55,6 +88,7 @@ const OrderList = () => {
                         <Link to={'/'}>Buyurtma berish</Link>
                     </HeaderText>
                 }
+
             </OrderContainer>
         </ContainerFluid>
     )
