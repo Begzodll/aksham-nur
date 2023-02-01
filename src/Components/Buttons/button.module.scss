@@ -84,7 +84,7 @@ $yellow-union-swiper-left: url('../../Assets/svg/yellow-union-swipers.png');
   @media(max-width: 600px){
     width: 80%;
     height: 35px;
-    font-size: 13px;
+    font-size: 14px;
   }
 }
 
@@ -123,13 +123,13 @@ $yellow-union-swiper-left: url('../../Assets/svg/yellow-union-swipers.png');
     background: $yellow-color;
     border-radius: 50%;
     position: fixed;
-    bottom: 30px;
+    bottom: 110px;
     right: 1rem;
     z-index: 20;
     justify-content: center;
     animation: Movebtn .3s linear;
     border: none;
-
+    cursor: pointer;
     &::after {
       content: '';
       position: absolute;
@@ -159,13 +159,13 @@ $yellow-union-swiper-left: url('../../Assets/svg/yellow-union-swipers.png');
     transform: translateY(0px);
   }
   25% {
-    transform: translateY(20px);
+    transform: translateY(60px);
   }
   50% {
     transform: translateY(0px);
   }
   75% {
-    transform: translateY(-20px);
+    transform: translateY(-60px);
   }
   100% {
     transform: translateY(0px);

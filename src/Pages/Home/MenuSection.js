@@ -22,7 +22,7 @@ const MenuSection = ({product, clickOrder}) => {
 
     // const objectLength = Object.keys(product).length;
     const [tabValue, setTabValue] = useState('')
-
+    const [active, setActive] = useState(true)
 
     const productArray = Object.values(product);
 
@@ -38,7 +38,7 @@ const MenuSection = ({product, clickOrder}) => {
             <section id={'menu'}/>
             <MenuTitle>Bizning Taomnomaniz</MenuTitle>
             <Stiky>
-                <NavigatorTab setVal={setTabValue}/>
+                <NavigatorTab setVal={setTabValue} setActive={setActive} active={active} />
             </Stiky>
             <Container>
                 <Block>

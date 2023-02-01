@@ -2,6 +2,8 @@ import HomeSection from "./HomeSection";
 import MenuSection from "./MenuSection";
 import RequestCall from "./RequestCall";
 import Basket from "../../Components/Basket/Basket";
+import {ScrollTop} from "../../Components/Buttons/Buttons";
+
 const HomeIndex = () => {
     return(
         <div>
@@ -9,6 +11,7 @@ const HomeIndex = () => {
             <HomeSection/>
             <MenuSection/>
             <RequestCall/>
+            <ScrollTop/>
         </div>
     )
 }

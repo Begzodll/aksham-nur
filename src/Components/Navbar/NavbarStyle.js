@@ -4,7 +4,6 @@ export const ContainerFluid = styled.div`
   background: rgba(0, 0, 0, 0.99);
   padding: 8px 0;
 `
-
 export const Container = styled.div`
   width: 75%;
   margin: 0 auto;
@@ -14,12 +13,10 @@ export const Container = styled.div`
     width: 90%;
   }
 `
-
 export const Logo = styled.img`
   width:150px;
   height: 70px;
 `
-
 export const ListGroup = styled.ul`
   display: flex;
   list-style: none;
@@ -37,7 +34,6 @@ export const ListGroup = styled.ul`
   }
   transition: 1s all ease;
 `
-
 export const Phone = styled.div`
   display: none;
   text-decoration: none;
@@ -56,7 +52,6 @@ export const ListItem = styled.li`
     margin: 2rem 0 0 0;
   }
 `
-
 export const CallButton = styled.a`
   color: #FFFF00;
   text-transform: uppercase;
