@@ -82,7 +82,7 @@ export const BtnOrder = styled.a`
   background: transparent;
   text-transform: uppercase;
   cursor: pointer;
-
+  text-align: center;
   &:hover {
     background: rgba(0, 0, 0, 0.6);
     color: #cbcaca;
