@@ -86,7 +86,7 @@ const ProductReducer = createSlice({
                     name: 'Bistro-small',
                     description: "Gosht, Kartoshka-free, Pomidor, Bodring",
                     price: "27.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 2,
@@ -94,7 +94,7 @@ const ProductReducer = createSlice({
                     name: 'Bishteks',
                     description: "Grechka, guruch, makaron, tuhum, katlet",
                     price: "20.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 3,
@@ -102,7 +102,7 @@ const ProductReducer = createSlice({
                     name: 'Bistro-large',
                     description: "Gosht, Kartoshka-free, Pomidor, Bodring",
                     price: "30.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 4,
@@ -110,7 +110,7 @@ const ProductReducer = createSlice({
                     name: 'Bistrogan',
                     description: "Gosht, Salat, Pomidor, Bodring",
                     price: "27.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 5,
@@ -118,7 +118,7 @@ const ProductReducer = createSlice({
                     name: 'AkShamnur Lazzat',
                     description: "Gosht, Kartoshka-free, Salat, Pomidor, Bodring",
                     price: "35.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 6,
@@ -126,7 +126,7 @@ const ProductReducer = createSlice({
                     name: 'Qozon-kabob',
                     description: "Gosht, Kartoshka-free, Pomidor, Bodring, Bedana-thum, qiyma",
                     price: "37.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 7,
@@ -134,7 +134,7 @@ const ProductReducer = createSlice({
                     name: 'Qush-tili',
                     description: "Gosht, Kartoshka-free, Pomidor, Bodring, Bedana-thum, qiyma",
                     price: "35.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 8,
@@ -142,7 +142,7 @@ const ProductReducer = createSlice({
                     name: 'Koza-shorva',
                     description: "Gosht, Kartoshka, Sabzi, Piyoz",
                     price: "25.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 9,
@@ -150,7 +150,7 @@ const ProductReducer = createSlice({
                     name: 'Siltama',
                     description: "Gosht, Kartoshka-free, Salat, Pomidor, Bodring",
                     price: "35.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 10,
@@ -158,7 +158,7 @@ const ProductReducer = createSlice({
                     name: 'Lavash-Obichniy',
                     description: "Gosht, Chips, Pomidor, Bodring, Sous",
                     price: "20.000",
-                    category: "meal"
+                    category: "taomlar"
                 },
                 {
                     id: 11,
@@ -166,7 +166,7 @@ const ProductReducer = createSlice({
                     name: 'Uygur-Lagmon',
                     description: "Lagmon, Gosht, Bulgori",
                     price: "22.000",
-                    category: "meal"
+                    category: "taomlar"
                 }
             ],
             fastFood: [
@@ -176,7 +176,7 @@ const ProductReducer = createSlice({
                     name: 'KFC-set-large',
                     description: "Chicken, Free, Salat, Bodrin",
                     price: "35.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 2,
@@ -184,7 +184,7 @@ const ProductReducer = createSlice({
                     name: 'KFC-set-small',
                     description: "Chicken, Free, Salat, Bodrin",
                     price: "25.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 3,
@@ -192,7 +192,7 @@ const ProductReducer = createSlice({
                     name: 'Americano Burger',
                     description: "Gosht, Pishloq, Salat",
                     price: "15.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 4,
@@ -200,7 +200,7 @@ const ProductReducer = createSlice({
                     name: 'Gamburger',
                     description: "Gosht, Chips, Salat, Bodrin",
                     price: "25.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 5,
@@ -208,7 +208,7 @@ const ProductReducer = createSlice({
                     name: 'Double-Gamburger',
                     description: "Gosht, Chips, Salat, Bodrin",
                     price: "30.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 6,
@@ -216,7 +216,7 @@ const ProductReducer = createSlice({
                     name: 'Gamburger-chicken',
                     description: "Chicken, Free, Salat, Bodrin",
                     price: "15.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 7,
@@ -224,7 +224,7 @@ const ProductReducer = createSlice({
                     name: 'Cheese-Burger Double',
                     description: "Gosht, Chips, Salat, Bodrin",
                     price: "30.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 8,
@@ -232,7 +232,7 @@ const ProductReducer = createSlice({
                     name: 'Non-Burger',
                     description: "Gosht, Salat, Non",
                     price: "15.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 9,
@@ -240,7 +240,7 @@ const ProductReducer = createSlice({
                     name: 'Hot-Dog',
                     description: "Sasiska, Chips, Salat, Bodrin",
                     price: "8.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 10,
@@ -248,7 +248,7 @@ const ProductReducer = createSlice({
                     name: 'Cheese-Burger Double',
                     description: "Sasiska 2, Chips, Pishloq, Salat, Bodrin",
                     price: "12.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 10,
@@ -256,7 +256,7 @@ const ProductReducer = createSlice({
                     name: 'Haggi',
                     description: "Gosht, Chips, Salat, Bodrin",
                     price: "15.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 10,
@@ -264,7 +264,7 @@ const ProductReducer = createSlice({
                     name: 'Haggi',
                     description: "Gosht, Chips, Salat, Bodrin",
                     price: "15.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 11,
@@ -272,7 +272,7 @@ const ProductReducer = createSlice({
                     name: 'Free',
                     description: "Kartoshka",
                     price: "10.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 12,
@@ -280,7 +280,7 @@ const ProductReducer = createSlice({
                     name: 'Donnar',
                     description: "Gosht, Salat",
                     price: "18.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 13,
@@ -288,7 +288,7 @@ const ProductReducer = createSlice({
                     name: 'Donnar-Large',
                     description: "Gosht, Salat, Free, Tovuq",
                     price: "18.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 14,
@@ -296,7 +296,7 @@ const ProductReducer = createSlice({
                     name: 'Lavash-chicken',
                     description: "Tovuq, Salat, chips, sous",
                     price: "17.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
                 {
                     id: 15,
@@ -304,7 +304,7 @@ const ProductReducer = createSlice({
                     name: 'Lavash-cheese',
                     description: "Gosht, Pishloq, Chips, Salat, sous",
                     price: "22.000",
-                    category: "fastFoods"
+                    category: "fastFood"
                 },
             ],
             somsa: [

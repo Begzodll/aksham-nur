@@ -1,25 +1,23 @@
 import {useEffect, useState} from "react";
 import {connect} from "react-redux";
-import {HeaderText, OrderContainer, CardGroup, CardItem} from "./OrderStyle";
-import {ContainerFluid, ProductDesc, ProductImage, ProductName, SizeCard, SubTitle} from "../Home/style/MenuStyle";
+import {HeaderText, OrderContainer, CardGroup, CardItem, NeonBtn, SizeCards} from "./OrderStyle";
+import {ContainerFluid, ProductDesc, ProductImage, ProductName, SubTitle} from "../Home/style/MenuStyle";
 import {Link} from "react-router-dom";
 
-const OrderList = ({product}) => {
-    const [mealList, setMealList] = useState([])
-    const basketMealList = localStorage.getItem('basket')
-
-    const productArray = Object.values(product);
-
-    let data = []
-
-    productArray.map(item => data.push(...item))
+const OrderList = () => {
+    const [mealList, setMealList] = useState([]);
+    const [chosenItem, setChosenItem] = useState([]);
+    const basketMealList = localStorage.getItem('basket');
 
     useEffect(() => {
         if (basketMealList)
             setMealList(JSON.parse(basketMealList))
     }, [basketMealList])
 
-    console.log(mealList)
+    const deleteItem = (item) => {
+        localStorage.removeItem('basket');
+        window.location.reload()
+    }
 
     return (
         <ContainerFluid>
@@ -38,11 +36,13 @@ const OrderList = ({product}) => {
                                             <ProductImage
                                                 src={item.image}
                                                 alt={`${item.image}`}/>
-                                            <SizeCard>
+                                            <SizeCards>
                                                 <ProductName><SubTitle>Nomi:</SubTitle>{item.name}</ProductName>
-                                                <ProductDesc><SubTitle>Masalliglar:</SubTitle>{item.description}</ProductDesc>
+                                                <ProductDesc><SubTitle>Masalliglar:</SubTitle>{item.description}
+                                                </ProductDesc>
                                                 <ProductDesc><SubTitle>Price:</SubTitle>{item.price}</ProductDesc>
-                                            </SizeCard>
+                                            </SizeCards>
+                                            <NeonBtn onClick={() => deleteItem(item)}>Ochirish</NeonBtn>
                                         </CardItem>
                                     </div>
                                 ))

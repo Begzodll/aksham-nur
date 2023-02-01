@@ -49,12 +49,18 @@ export const Block = styled.div`
   @media(max-width:1024px){
     grid-template-columns: 48% 48%;
   }
+  @media( max-width:1023.5px){
+    grid-gap: 50px;
+  }
+  @media( max-width:740px){
+    grid-gap: 20px;
+  }
   @media(max-width:610px){
     grid-template-columns:  100%;
   }
-  @media(max-width:400px){
-    grid-template-columns:  100%;
-  }
+  //@media(max-width:400px){
+  //  grid-template-columns:  100%;
+  //}
 `
 export const Box = styled.div`
   width: 100%;
@@ -128,6 +134,7 @@ export const ProductImage = styled.img`
   width: 100%;
   height: 300px;
   border-bottom: 1px solid #ccc;
+  pointer-events: none;
 `
 export const BtnGroup = styled.div`
   display: flex;
@@ -136,4 +143,12 @@ export const BtnGroup = styled.div`
   @media(max-width: 600px){
     flex-direction: column;
   }
+`
+export const Stiky = styled.div`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  height: 100px;
+  margin: 0 0 4rem 0;
 `

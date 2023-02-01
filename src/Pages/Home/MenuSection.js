@@ -13,12 +13,16 @@ import {
     ProductImage,
     SizeCard,
     SubTitle,
-    BtnGroup
+    BtnGroup, Stiky
 } from "./style/MenuStyle";
+import NavigatorTab from "../../Components/NavigatorTab/NavigatorTab";
 
-const MenuSection = ({ product, clickOrder}) => {
+
+const MenuSection = ({product, clickOrder}) => {
 
     // const objectLength = Object.keys(product).length;
+    const [tabValue, setTabValue] = useState('')
+
 
     const productArray = Object.values(product);
 
@@ -33,10 +37,20 @@ const MenuSection = ({ product, clickOrder}) => {
         <ContainerFluid>
             <section id={'menu'}/>
             <MenuTitle>Bizning Taomnomaniz</MenuTitle>
+            <Stiky>
+                <NavigatorTab setVal={setTabValue}/>
+            </Stiky>
             <Container>
                 <Block>
                     {
-                        data.map((item, index) => (
+                        // eslint-disable-next-line array-callback-return
+                        data.filter(item=>{
+                            if( tabValue === "xammasi" ){
+                                return item
+                            } else if (item.category.includes(tabValue)) {
+                                return item
+                            }
+                        }).map((item, index) => (
                             <div key={index}>
                                 <Card>
                                     <ProductImage
