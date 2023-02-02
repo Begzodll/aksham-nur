@@ -103,6 +103,10 @@ export const BillField = styled.div`
   height: auto;
   margin: 4rem 0 0 0;
   padding: 1rem;
+  @media(max-width: 420px){
+    width: 100%;
+    padding: 0;
+  }
 `
 export const InputGroup = styled.div`
   width: 55%;
