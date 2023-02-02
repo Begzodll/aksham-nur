@@ -20,12 +20,13 @@ export const ModalBlock = styled.div`
   6px 6px 10px rgba(0, 0, 0, .15);
 `
 export const ModalCard = styled.div`
-  
+  position: relative;
 `
 export const MapStyle = styled.div`
-  width: 100%;
-  margin: 2rem auto;
-  padding: 1.5rem;
+  width: 80%;
+  height: 15%;
+  margin: 0 auto 2rem auto;
+  
 `
 export const LocationBtn = styled.button`
   display: flex;
@@ -39,10 +40,25 @@ export const LocationBtn = styled.button`
   color: #414141;
   text-transform: uppercase;
   font-size: 13px;
-  cursor: pointer;
   box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
     -6px -6px 10px rgba(255, 255, 255, .5),
   6px 6px 8px rgba(255, 255, 255, .075),
   6px 6px 10px rgba(0, 0, 0, .15);
   border-radius: 20px;
+`
+export const CloseBtn = styled.button`
+  position: absolute;
+  right: 0;
+  top: 0;
+ width: 30px;
+ height: 30px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+    -6px -6px 10px rgba(255, 255, 255, .5),
+  6px 6px 8px rgba(255, 255, 255, .075),
+  6px 6px 10px rgba(0, 0, 0, .15);
 `

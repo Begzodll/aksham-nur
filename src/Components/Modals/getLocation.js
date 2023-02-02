@@ -1,48 +1,43 @@
-import {ContainerGetLocation, LocationBtn, MapStyle} from "./ModalStyle/locationStyle";
+import React, {useEffect, useState} from "react";
+import {CloseBtn, ContainerGetLocation, LocationBtn, MapStyle} from "./ModalStyle/locationStyle";
 import {ModalBlock, ModalCard} from "./ModalStyle/locationStyle";
-
 import {
     YMaps,
     Map,
     ZoomControl,
+    Placemark,
     FullscreenControl,
     SearchControl,
-    GeolocationControl,
-    Placemark
+    GeolocationControl
 } from "react-yandex-maps";
-import React, {useEffect, useState} from "react";
 
-const GetLocation = ({toggle}) => {
+const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) => {
 
-    const [selectedLocation, setSelectedLocation] = useState(null);
-    const [currentLocation, setCurrentLocation] = useState(null);
-    const [findMe, setFindMe] = useState(null)
-    const options = {
-        center: findMe,
+    const [selected, setSelected] = useState(null)
+    const [location, setLocation] = useState([])
+    const [centerSelected, setCenterSelected] = useState([40.709698, 72.057462])
+
+    const center = {
+        center: centerSelected,
         zoom: 9
     };
-    
-    useEffect(()=>{
-        if(currentLocation == null){
-            setFindMe([41.2825125, 69.1392826])
-        }
-    },[currentLocation])
 
     const onMapClick = (e) => {
-        setSelectedLocation(e)
+        setCurrentLocation(e._sourceEvent.originalEvent.coords)
+        setLocation(e._sourceEvent.originalEvent.coords)
     };
 
-    const getLocation = () => {
-        fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=XXXXXXXXXXXX&longitude=XXXXXXXXXXXX&localityLanguage=en')
-            .then((res) => res.json())
-            .then((data) => setCurrentLocation(data))
-            .catch(err => console.error(err))
-
-        if (currentLocation != null) {
-            setFindMe([currentLocation.latitude, currentLocation.longitude])
+    const findMe = () => {
+        if (navigator?.geolocation) {
+            navigator.geolocation.getCurrentPosition((location) => {
+                if (location) {
+                    setSelected([location.coords.latitude, location.coords.longitude]);
+                    setLocation([location.coords.latitude, location.coords.longitude]);
+                    setCenterSelected([location.coords.latitude, location.coords.longitude])
+                }
+            });
         }
-    };
-
+    }
 
     return (
         <div>
@@ -54,20 +49,26 @@ const GetLocation = ({toggle}) => {
                                 <MapStyle>
                                     <YMaps>
                                         <Map
-                                            modules={["Placemark", "geocode", "geoObject.addon.balloon"]}
-                                            onClick={(e) => onMapClick(e._sourceEvent.originalEvent.coords)}
-                                            state={options}
-                                            style={{width: "100%", height: 'auto'}}
+                                            state={center}
+                                            width="100%"
+                                            height="400px"
+                                            modules={["control.SearchControl"]}
+                                            onClick={(e) => onMapClick(e)}
                                         >
-                                            {selectedLocation ? <Placemark geometry={selectedLocation}/> : null}
-                                            <ZoomControl/>
+                                            <ZoomControl
+                                                options={{float: "none", position: {top: 100, right: 10}}}
+                                            />
+                                            <Placemark options={{
+                                                iconImageSize: [32, 32],
+                                            }} geometry={location}/>
                                             <FullscreenControl/>
-                                            <SearchControl/>
                                             <GeolocationControl/>
+                                            <SearchControl/>
                                         </Map>
                                     </YMaps>
                                 </MapStyle>
-                                <LocationBtn onClick={getLocation}>Meni izlash</LocationBtn>
+                                <CloseBtn onClick={() => setToggler(p => !p)}>X</CloseBtn>
+                                <LocationBtn onClick={findMe}>Meni izlash</LocationBtn>
                             </ModalCard>
                         </ModalBlock>
                     </ContainerGetLocation> : ""

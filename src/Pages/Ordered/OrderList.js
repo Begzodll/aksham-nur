@@ -1,6 +1,9 @@
 import {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import GetLocation from "../../Components/Modals/getLocation";
+import {Link} from "react-router-dom";
+import {TargetPhoneNumber} from "../../Helpers/helpers";
+import {ContainerFluid, ProductDesc, ProductImage, ProductName, SubTitle} from "../Home/style/MenuStyle";
 import {
     HeaderText,
     OrderContainer,
@@ -12,15 +15,13 @@ import {
     InputGroup,
     InputItem
 } from "./OrderStyle";
-import {ContainerFluid, ProductDesc, ProductImage, ProductName, SubTitle} from "../Home/style/MenuStyle";
-import {Link} from "react-router-dom";
-import {TargetPhoneNumber} from "../../Helpers/helpers";
 
 const OrderList = () => {
     const [mealList, setMealList] = useState([]);
     const [getNumber, setGetNumber] = useState('+998');
     const [name, setName] = useState('');
     const [togler, setTogler] = useState(false);
+    const [currentLocation, setCurrentLocation] = useState([]);
     const basketMealList = localStorage.getItem('basket');
 
     useEffect(() => {
@@ -38,15 +39,15 @@ const OrderList = () => {
         setGetNumber(valPhone)
     }
 
-    const getCurrentLocation = () => {
 
-    }
 
     return (
         <ContainerFluid>
             <OrderContainer>
                 {mealList.length > 0 ?
                     <div>
+                        <GetLocation toggle={togler} setToggler={setTogler} setCurrentLocation={setCurrentLocation}
+                                     currentLocation={currentLocation}/>
                         <HeaderText>
                             Sizning Buyurtmalaringiz
                         </HeaderText>
@@ -80,7 +81,6 @@ const OrderList = () => {
                                            onClick={() => setTogler(p => !p)}/>
                             </InputGroup>
                         </BillField>
-                        <GetLocation toggle={togler}/>
                     </div>
                     :
                     <HeaderText>
