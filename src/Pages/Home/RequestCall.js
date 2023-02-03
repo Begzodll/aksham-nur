@@ -28,12 +28,13 @@ function RequestCall() {
         event.preventDefault()
         if (name !== '' && number !== '') {
             sendMessage({
-                token: "5914837575:AAGYWPHHo-FEBtM4Lh_Uocn4FiZdvIetU9Y",
-                chatId: -1001611008926,
+                token: process.env.REACT_APP_TOKEN_TG_API,
+                chatId: process.env.REACT_APP_TG_CHATID,
                 data: `Mijoz  joy band qilgani == Vaqti ${date} || Ismi: ${name} || Telefon qilish vaqti:${option} || Telefon raqami: ${number}`
             })
             setName('')
             setNumber('+998')
+            setOption("")
         } else {
             toast.warn('Ismingiz va Telefoningizni kiriting 😊')
         }
