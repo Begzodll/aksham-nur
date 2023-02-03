@@ -131,6 +131,7 @@ export const InputGroup = styled.div`
   @media(max-width: 420px){
     width: 100%;
     padding: 2rem 0;
+    border-bottom: 1px solid #ccc;  
   }
 `
 export const InputItem = styled.input`

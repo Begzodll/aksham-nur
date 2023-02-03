@@ -1,51 +1,48 @@
 import Style from './style/Register.module.scss';
 import {useState} from "react";
-import {TargetPhoneNumber} from "../../Helpers/helpers";
+// import {TargetPhoneNumber} from "../../Helpers/helpers";
+import {toast} from "react-toastify";
 
-function RequestCall({title, titleAbout, setModal}) {
+function RequestCall() {
 
     const [option, setOption] = useState('');
     const [name, setName] = useState('');
     const [number, setNumber] = useState('+998');
 
-    // const [status, setStatus] = useState(false)
-    // const today = new Date(),
-        // date = today.getFullYear() + ' - ' + (today.getMonth() + 1) + ' - ' + today.getDate()
-    // const Submit = ({token, chatId, data}) => {
-    //     fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${data}`)
-    //         .then(res => res.json())
-    //         .then(
-    //             (result) => {
-    //                 setStatus(true)
-    //             },
-    //             (error) => {
-    //                 console.log(error)
-    //             })
-    //     if( name !== '' && number.length >= 20 ){
-    //         toast.success("Ma'lumotingiz jonatildi 😊")
-    //     } else {
-    //         toast.error("Ma'lumotingizni to'liq yozing 😊")
-    //     }
-    // }
-    //
-    //
-    // function handleSubmit(event) {
-    //     event.preventDefault()
-    //     if (name !== '' && number !== '') {
-    //         Submit({
-    //             token: "5395482316:AAGMr03NnPCUssDpC68elGa2jBZF7ChRGSw",
-    //             chatId: -1001542759288,
-    //             data: ` Yangi o'quvchi == Vaqti ${date} || Ismi: ${name} || Yo'nalishi:${option} || Telefon raqami: ${number}`
-    //         })
-    //         setName('')
-    //         setNumber('')
-    //     }
-    // }
+    const today = new Date(),
+        date = today.getFullYear() + ' - ' + (today.getMonth() + 1) + ' - ' + today.getDate()
 
-    const  getPhone = (e) => {
-        const valPhone = TargetPhoneNumber(e.target.value)
-        setNumber(valPhone)
+    const sendMessage = ({token, chatId, data}) => {
+        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${data}`)
+            .then((res) => res.json())
+            .then((result) => console.log(result.ok))
+            .catch(err => console.log(err))
+        if (name !== '' && number.length >= 13) {
+            toast.success('Malumotingiz jonatildi 😊')
+        } else {
+            toast.error('Barcha malumotni togri kiriting 😊')
+        }
     }
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        if (name !== '' && number !== '') {
+            sendMessage({
+                token: "5914837575:AAGYWPHHo-FEBtM4Lh_Uocn4FiZdvIetU9Y",
+                chatId: -1001611008926,
+                data: `Mijoz  joy band qilgani == Vaqti ${date} || Ismi: ${name} || Telefon qilish vaqti:${option} || Telefon raqami: ${number}`
+            })
+            setName('')
+            setNumber('+998')
+        } else {
+            toast.warn('Ismingiz va Telefoningizni kiriting 😊')
+        }
+    }
+
+    // const getPhone = (e) => {
+    //     const valPhone = TargetPhoneNumber(e.target.value)
+    //     setNumber(valPhone)
+    // }
 
     return (
         <section id={'place'} className={Style.register}>
@@ -59,11 +56,11 @@ function RequestCall({title, titleAbout, setModal}) {
                                onChange={(e) => setName(e.target.value)}
                                value={name}
                         />
-                        <input type="text" placeholder={'Telefon raqamingiz?'}
-                               onChange={e => getPhone(e)} value={number}/>
-                        <input type="number" placeholder={'Qulay vaqt'}
+                        <input type="tel" placeholder={'Telefon raqamingiz?'} max={13}  maxLength={13}
+                               onChange={e => setNumber(e.target.value)} value={number}/>
+                        <input type="text" placeholder={'Qulay vaqt'} max={4}  maxLength={4}
                                onChange={(e) => setOption(e.target.value)}/>
-                        <button onClick={null}/>
+                        <button onClick={handleSubmit}/>
                     </form>
                 </div>
             </div>

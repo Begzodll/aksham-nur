@@ -69,7 +69,7 @@ export const CloseBtn = styled.button`
   6px 6px 8px rgba(255, 255, 255, .075),
   6px 6px 10px rgba(0, 0, 0, .15);
   @media (max-width: 420px) {
-    //top: -30px;
-    //right: -30px;
+    top: -13px;
+    right: -13px;
   }
 `
