@@ -42,7 +42,7 @@ export const CardItem = styled.div`
   width: 100%;
   min-height: 535px;
   cursor: pointer;
-  padding:  1rem;
+  padding: 1rem;
   transition: .2s all ease;
   box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
     -6px -6px 10px rgba(255, 255, 255, .5),
@@ -79,37 +79,40 @@ export const NeonBtn = styled.button`
     -6px -6px 10px rgba(255, 255, 255, .5),
   6px 6px 8px rgba(255, 255, 255, .075),
   6px 6px 10px rgba(0, 0, 0, .15);
-  &:hover{
+
+  &:hover {
     box-shadow: -2px -2px 6px rgba(255, 255, 255, .6),
       -2px -2px 4px rgba(255, 255, 255, .4),
     2px 2px 2px rgba(255, 255, 255, .05),
     2px 2px 4px rgba(0, 0, 0, .1);
   }
-  &:active{
+
+  &:active {
     box-shadow: inset -2px -2px 6px rgba(255, 255, 255, .7),
       inset -2px -2px 4px rgba(255, 255, 255, .5),
     inset 2px 2px 2px rgba(255, 255, 255, .075),
     inset 2px 2px 4px rgba(0, 0, 0, .15);
   }
+
   @media (max-width: 1101px) {
     font-size: 14px;
-    margin:.5rem 1rem .5rem 0 ;
+    margin: .5rem 1rem .5rem 0 ;
   }
 `
 export const SizeCards = styled.div`
-    margin: 1rem;
+  margin: 1rem;
 `
 export const BillField = styled.div`
   height: auto;
   margin: 4rem 0 0 0;
   padding: 1rem;
-  @media(max-width: 420px){
+  @media (max-width: 420px) {
     width: 100%;
     padding: 0;
   }
 `
 export const InputGroup = styled.div`
-  width: 55%;
+  width: 90%;
   height: auto;
   padding: 2rem 2rem;
   border-radius: 30px;
@@ -121,30 +124,32 @@ export const InputGroup = styled.div`
     -6px -6px 10px rgba(255, 255, 255, .5),
   6px 6px 8px rgba(255, 255, 255, .075),
   6px 6px 10px rgba(0, 0, 0, .15);
-  @media(max-width: 1200px){
-    flex-direction: column;
-  }
-  @media(max-width: 700px){
+  @media (max-width: 1290px) { width: 90%;}
+  
+  @media (max-width: 1200px) {
+    width: 50%;
+    flex-direction: column;}
+  @media (max-width: 700px) {
     width: 80%;
     padding: 2rem 0;
   }
-  @media(max-width: 420px){
+  @media (max-width: 420px) {
     width: 100%;
     padding: 2rem 0;
-    border-bottom: 1px solid #ccc;  
+    border-bottom: 1px solid #ccc;
   }
 `
 export const InputItem = styled.input`
   width: 100%;
-    margin: 0 1rem;
-  border:none;
+  margin: 0 1rem;
+  border: none;
   outline: none;
   padding: 10px 1rem;
   border-radius: 10px;
   cursor: pointer;
   color: #414141;
   background: transparent;
-  @media(max-width: 1200px){
+  @media (max-width: 1200px) {
     width: 80%;
     margin: 1rem 0;
   }

@@ -15,6 +15,7 @@ import {
     InputGroup,
     InputItem
 } from "./OrderStyle";
+import {toast} from "react-toastify";
 
 const OrderList = () => {
     const [mealList, setMealList] = useState([]);
@@ -34,12 +35,45 @@ const OrderList = () => {
         window.location.reload()
     }
 
-    const getPhone = (e) => {
-        const valPhone = TargetPhoneNumber(e.target.value)
-        setGetNumber(valPhone)
+    const today = new Date(),
+        date = today.getFullYear() + ' - ' + (today.getMonth() + 1) + ' - ' + today.getDate()
+
+    const sendData = ({token, chatId, data}) => {
+        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${data}`)
+            .then((res) => res.json())
+            .then((result) => console.log(result.ok))
+            .catch(err => console.log(err))
     }
 
-
+    function clickSubmit(event) {
+        event.preventDefault()
+        if (name !== '' && getNumber.length >= 13 && currentLocation.length >= 1) {
+            sendData({
+                token: process.env.REACT_APP_TOKEN_TG_API,
+                chatId: process.env.REACT_APP_TG_CHATID,
+                data: `
+                        🔶 Yangi buyurtma == Vaqti ${date} ♦
+                        🔶 Ismi: ${name} ♦️
+                        🔶 Telefon raqami: ${getNumber} ♦️
+                        🔶 Buyurtmalar soni ${mealList.length + 1} ta ♦️ 
+                        🔶 Nomi: ${mealList.map(item => item.name,)}♦                        
+                        🔶 Manzil: https://maps.google.com?q=${currentLocation}  ♦
+                    `
+            })
+            setName('')
+            setGetNumber('+998')
+            setCurrentLocation([])
+            toast.success('Jonatildi 😊')
+        } else if (name === '') {
+            toast.warn('Ismingizni kiriting 😊')
+        } else if (getNumber.length >= 13) {
+            toast.warn('Raqamingiz xato 😊')
+        } else if (currentLocation.length <= 1) {
+            toast.warn('Manzilni kiriting 😊')
+        } else {
+            toast.error("Malumotlarni toliq kiriting")
+        }
+    }
 
     return (
         <ContainerFluid>
@@ -75,10 +109,12 @@ const OrderList = () => {
                         <BillField>
                             <InputGroup>
                                 <InputItem placeholder={'Ismingiz'} onChange={(e) => setName(e.target.value)}/>
-                                <InputItem placeholder={'Telefon raqamingiz'} type={'text'}
-                                           onChange={(e) => getPhone(e)} value={getNumber}/>
+                                <InputItem placeholder={'Telefon raqamingiz'} type={'text'} maxLength={13} max={13}
+                                           onChange={(e) => setGetNumber(e.target.value)} value={getNumber}/>
                                 <InputItem value={'Manzil kiritish'} type={'button'}
                                            onClick={() => setTogler(p => !p)}/>
+                                <InputItem value={'Yuborish'} type={'button'}
+                                           onClick={clickSubmit}/>
                             </InputGroup>
                         </BillField>
                     </div>

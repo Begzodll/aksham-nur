@@ -13,8 +13,6 @@ import {
 
 const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) => {
 
-    const [selected, setSelected] = useState(null)
-    const [location, setLocation] = useState([])
     const [centerSelected, setCenterSelected] = useState([40.709698, 72.057462])
 
     const center = {
@@ -24,15 +22,13 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
 
     const onMapClick = (e) => {
         setCurrentLocation(e._sourceEvent.originalEvent.coords)
-        setLocation(e._sourceEvent.originalEvent.coords)
     };
 
     const findMe = () => {
         if (navigator?.geolocation) {
             navigator.geolocation.getCurrentPosition((location) => {
                 if (location) {
-                    setSelected([location.coords.latitude, location.coords.longitude]);
-                    setLocation([location.coords.latitude, location.coords.longitude]);
+                    setCurrentLocation([location.coords.latitude, location.coords.longitude]);
                     setCenterSelected([location.coords.latitude, location.coords.longitude])
                 }
             });
@@ -60,7 +56,7 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
                                             />
                                             <Placemark options={{
                                                 iconImageSize: [32, 32],
-                                            }} geometry={location}/>
+                                            }} geometry={currentLocation}/>
                                             <FullscreenControl/>
                                             <GeolocationControl/>
                                             <SearchControl/>
