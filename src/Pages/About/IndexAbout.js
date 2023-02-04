@@ -1,5 +1,7 @@
 import AboutHeader from "./AboutHeader";
 import Statistic from "./Statistic";
+import AboutGallery from "./AboutGalery";
+
 import {AboutMainContainer} from "./StyleAbout/AboutHeaderStyle";
 
 const IndexAbout = () => {
@@ -7,6 +9,7 @@ const IndexAbout = () => {
         <AboutMainContainer>
             <AboutHeader/>
             <Statistic/>
+            <AboutGallery/>
         </AboutMainContainer>
     )
 }

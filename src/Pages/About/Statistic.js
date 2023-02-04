@@ -1,19 +1,17 @@
 import {connect} from "react-redux";
 import {
-    StatisticMainContainer,
     BlockStatistic,
     BoxStatistic,
     Flex,
     Svg,
     UpText,
     DownText,
-    TextBlock
+    TextBlock, StatisticContainer
 } from "./StyleAbout/AboutHeaderStyle";
 
 const Statistic = ({aboutSection}) => {
-    console.log(aboutSection.svg)
     return (
-        <StatisticMainContainer>
+        <StatisticContainer>
             <BlockStatistic>
                 {
                     aboutSection.svg.map(item => (
@@ -29,7 +27,7 @@ const Statistic = ({aboutSection}) => {
                     ))
                 }
             </BlockStatistic>
-        </StatisticMainContainer>
+        </StatisticContainer>
     )
 }
 export default connect(({dataProduct: {aboutSection}}) => ({aboutSection}), null)(Statistic)

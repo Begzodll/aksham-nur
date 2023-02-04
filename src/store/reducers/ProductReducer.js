@@ -84,6 +84,17 @@ import photo7 from '../../Assets/images/photoOfView/7.jpg'
 //svg
 import {Employee, LineGraph, LocationSvg} from "../../Assets/svg/svg";
 
+// Gallery
+import insidePhoto1 from '../../Assets/images/photoOfView/1.jpg'
+import insidePhoto2 from '../../Assets/images/photoOfView/2.jpg'
+import insidePhoto3 from '../../Assets/images/photoOfView/3.jpg'
+import insidePhoto4 from '../../Assets/images/photoOfView/4.jpg'
+import insidePhoto5 from '../../Assets/images/photoOfView/5.jpg'
+import insidePhoto6 from '../../Assets/images/photoOfView/6.jpg'
+import insidePhoto7 from '../../Assets/images/photoOfView/7.jpg'
+import framer from '../../Assets/svg/Frame.png'
+
+
 const ProductReducer = createSlice({
     name: 'product',
     initialState: {
@@ -567,47 +578,75 @@ const ProductReducer = createSlice({
                 },
             ]
         },
-        aboutSection:{
-            viewPoint:[
+        aboutSection: {
+            viewPoint: [
                 {
-                    id:1,
-                    image:photo1
+                    id: 1,
+                    image: photo1
                 },
                 {
-                    id:2,
-                    image:photo2
+                    id: 2,
+                    image: photo2
                 },
                 {
-                    id:3,
-                    image:photo3
+                    id: 3,
+                    image: photo3
                 },
                 {
-                    id:4,
-                    image:photo4
+                    id: 4,
+                    image: photo4
                 },
                 {
-                    id:5,
-                    image:photo5
+                    id: 5,
+                    image: photo5
                 },
                 {
-                    id:6,
-                    image:photo6
+                    id: 6,
+                    image: photo6
                 },
                 {
-                    id:7,
-                    image:photo7
+                    id: 7,
+                    image: photo7
                 },
             ],
-            svg:[
-                {id:1, svg:<LineGraph/>, boldText:2, text:'yillik buyuk tarix'},
-                {id:2, svg:<LocationSvg/>, boldText:"Shaxarning", text:'qoq markazida'},
-                {id:3, svg:<Employee/>, boldText:'20+', text:'professional xodimlar'}
-            ]
+            svg: [
+                {id: 1, svg: <LineGraph/>, boldText: 2, text: 'yillik ulkan tajriba'},
+                {id: 2, svg: <LocationSvg/>, boldText: "Shaxarning", text: 'qoq markazida'},
+                {id: 3, svg: <Employee/>, boldText: '20+', text: 'professional xodimlar'}
+            ],
+            gallery: {
+                photos: [
+                    {id: 1, photo: insidePhoto1},
+                    {id: 2, photo: insidePhoto2},
+                    {id: 3, photo: insidePhoto3},
+                    {id: 4, photo: insidePhoto4},
+                    {id: 5, photo: insidePhoto5},
+                    {id: 6, photo: insidePhoto6},
+                    {id: 7, photo: insidePhoto7},
+                ],
+                textHeader: <span>
+                    — <b>AkShamNur</b> yetkazib berish yo‘nalishini faol rivojlantirmoqda – bu vaqtni,
+                    <b>tez va qulay</b> tarzda tejaydi. Bundan tashqari, bu har doim xaridor tomonidan
+                    <b>yuqori baholanadigan</b> va talab qilinadigan xizmatning muhim <b>elementlaridan biridir</b>.
+                    Bugun biz haqli ravishda <b>faxrlanamizki</b>, bizning yetkazib berishimiz
+                    O'zbekistondagi <b>eng tezkorlaridan</b> biri bo'ladi. <br/> <br/>
+                    — Masalan, Shahrixon shahrida
+                    <b>buyurtma olingan paytdan</b>boshlab o‘rtacha yetkazib berish muddati bor-yo‘g‘i <b>15-20 daqiqani</b> tashkil etadi.
+                </span>,
+                tick: [
+                    {id: 1, svg:framer, text: <div><b>Mazali</b> Tao'mlar</div>},
+                    {id: 2, svg:framer, text: <div>Ajoib <b>muhid</b></div>},
+                    {id: 3, svg:framer, text: <div><b>Tajribali</b> oshpazlar</div>},
+                    {id: 4, svg:framer, text: <div>Zamonaviy uslubda</div>},
+                    {id: 5, svg:framer, text: <div><b>Tez</b> eltib berish</div>},
+                    {id: 6, svg:framer, text: <div> Yuqori <b>sifat</b></div>}
+                ]
+            }
         }
     },
     reducers: {
         getProduct: (state, action) => {
-            // state.info = action.payload.data
+            // Api data set to state // state.info = action.payload.data
         },
         setBasket: (state, action) => {
             state.basket.push(action.payload)
@@ -617,6 +656,7 @@ const ProductReducer = createSlice({
         }
     }
 })
+
 //API call
 // export const getProductFunc = () => apiCall({
 //     url: '/product/all',

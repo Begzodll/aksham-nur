@@ -70,7 +70,8 @@ export const SubDesc = styled.p`
 `
 
 // Statistic style
-export const StatisticMainContainer = styled.div`
+
+export const StatisticContainer = styled.div`
   width: 80%;
   margin: 2rem auto 0 auto;
 `
@@ -145,4 +146,106 @@ export const UpText = styled.div`
 `
 export const DownText = styled.div`
   color: #9f9f9f;
+`
+
+// Gallery style
+
+export const GalleryMainContainer = styled.div`
+  width: 90%;
+  margin: 0 auto;
+  height: auto;
+  padding: 2rem 0 8rem 0;
+  @media(max-width: 1120px){
+    width: 95%;
+  }
+`
+export const Block = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: -6px -6px 14px rgba(255, 255, 255, .7),
+    -6px -6px 10px rgba(255, 255, 255, .5),
+  6px 6px 8px rgba(255, 255, 255, .075),
+  6px 6px 10px rgba(0, 0, 0, .15);
+  @media(max-width: 950px){
+    flex-direction: column;
+    justify-content: start;
+  }
+  @media(max-width: 475px){
+    padding: 1.5rem 0 0 0;
+  }
+`
+export const BlockItem = styled.div`
+  width: 50%;
+  height: auto;
+  margin: 0 1rem;
+  @media(max-width: 1010px){
+    margin: 0 .5rem;
+  }
+  @media(max-width: 900px){
+    width: 80%;
+  }
+  @media(max-width: 577px){
+    width: 100%;
+  }
+`
+export const SwiperImage = styled.div`
+
+`
+export const AdvantagesArea = styled.div`
+
+`
+
+export const ImageItem = styled.img`
+  width: 100%;
+  margin: 0 1rem;
+  border-radius: 20px;
+`
+export const PathSwiper = styled.div`
+    padding: 0 2rem;
+  width: 100%;
+  @media(max-width: 475px){
+    margin: 0 0 0 -1rem;
+  }
+`
+export const MainTitle = styled.p`
+  width: 100%;
+  @media(max-width: 950px){
+    margin-top: 2rem;
+  }
+`
+export const BlockQuotes = styled.div`
+  width: 100%;
+  height: auto;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 0 8px;
+  @media(max-width: 995px){
+    margin-top: 1.5rem;
+  }
+`
+export const TextArea = styled.div`
+  padding: 1rem;
+`
+export const Quotes = styled.div`
+  margin: 10px 20px;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 0;
+    background-image:url(${({icon})=>icon});
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+  }
+  @media(max-width: 450px){
+    font-size: 14px;
+  }
 `
