@@ -631,11 +631,11 @@ const ProductReducer = createSlice({
                     Bugun biz haqli ravishda <b>faxrlanamizki</b>, bizning yetkazib berishimiz
                     O'zbekistondagi <b>eng tezkorlaridan</b> biri bo'ladi. <br/> <br/>
                     — Masalan, Shahrixon shahrida
-                    <b>buyurtma olingan paytdan</b>boshlab o‘rtacha yetkazib berish muddati bor-yo‘g‘i <b>15-20 daqiqani</b> tashkil etadi.
+                    <b>buyurtma olingan paytdan</b> boshlab o‘rtacha yetkazib berish muddati bor-yo‘g‘i <b>15-20 daqiqani</b> tashkil etadi.
                 </span>,
                 tick: [
-                    {id: 1, svg:framer, text: <div><b>Mazali</b> Tao'mlar</div>},
-                    {id: 2, svg:framer, text: <div>Ajoib <b>muhid</b></div>},
+                    {id: 1, svg:framer, text: <div><b>Mazali</b> Taomlar</div>},
+                    {id: 2, svg:framer, text: <div>Ajoib <b>muhit</b></div>},
                     {id: 3, svg:framer, text: <div><b>Tajribali</b> oshpazlar</div>},
                     {id: 4, svg:framer, text: <div>Zamonaviy uslubda</div>},
                     {id: 5, svg:framer, text: <div><b>Tez</b> eltib berish</div>},
