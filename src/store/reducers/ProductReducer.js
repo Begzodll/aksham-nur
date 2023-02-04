@@ -4,9 +4,8 @@ import {apiCall} from "../Action";
 //Images
 
 // Foods
-import meal1 from '../../Assets/images/MENU/meal/Bistro-small.png';
 import meal2 from '../../Assets/images/MENU/meal/BIFSHTEKS.png'
-import meal3 from '../../Assets/images/MENU/meal/Bistro (1).png'
+import meal3 from "../../Assets/images/MENU/meal/TokliDo'lma.webp"
 import meal4 from '../../Assets/images/MENU/meal/bistrogan.png'
 import meal5 from '../../Assets/images/MENU/meal/nurLazzat.png'
 import meal6 from '../../Assets/images/MENU/meal/qozonKabob.png'
@@ -73,6 +72,18 @@ import salat10 from '../../Assets/images/MENU/salat/vinegredSalat.png';
 import salat11 from '../../Assets/images/MENU/salat/yaponSalat.png';
 import salat12 from '../../Assets/images/MENU/salat/zelyoniySalat.png';
 
+//Place View
+import photo1 from '../../Assets/images/photoOfView/1.jpg'
+import photo2 from '../../Assets/images/photoOfView/2.jpg'
+import photo3 from '../../Assets/images/photoOfView/3.jpg'
+import photo4 from '../../Assets/images/photoOfView/4.jpg'
+import photo5 from '../../Assets/images/photoOfView/5.jpg'
+import photo6 from '../../Assets/images/photoOfView/6.jpg'
+import photo7 from '../../Assets/images/photoOfView/7.jpg'
+
+//svg
+import {Employee, LineGraph, LocationSvg} from "../../Assets/svg/svg";
+
 const ProductReducer = createSlice({
     name: 'product',
     initialState: {
@@ -82,14 +93,6 @@ const ProductReducer = createSlice({
             meals: [
                 {
                     id: 1,
-                    image: meal1,
-                    name: 'Bistro-small',
-                    description: "Gosht, Kartoshka-free, Pomidor, Bodring",
-                    price: "27.000",
-                    category: "taomlar"
-                },
-                {
-                    id: 2,
                     image: meal2,
                     name: 'Bishteks',
                     description: "Grechka, guruch, makaron, tuhum, katlet",
@@ -97,15 +100,15 @@ const ProductReducer = createSlice({
                     category: "taomlar"
                 },
                 {
-                    id: 3,
+                    id: 2,
                     image: meal3,
-                    name: 'Bistro-large',
-                    description: "Gosht, Kartoshka-free, Pomidor, Bodring",
-                    price: "30.000",
+                    name: "Tokli do'lma",
+                    description: "kavartak, gosht, pamidor, bodrin.",
+                    price: "35.000",
                     category: "taomlar"
                 },
                 {
-                    id: 4,
+                    id: 3,
                     image: meal4,
                     name: 'Bistrogan',
                     description: "Gosht, Salat, Pomidor, Bodring",
@@ -113,7 +116,7 @@ const ProductReducer = createSlice({
                     category: "taomlar"
                 },
                 {
-                    id: 5,
+                    id: 4,
                     image: meal5,
                     name: 'AkShamnur Lazzat',
                     description: "Gosht, Kartoshka-free, Salat, Pomidor, Bodring",
@@ -563,6 +566,43 @@ const ProductReducer = createSlice({
                     category: "salat"
                 },
             ]
+        },
+        aboutSection:{
+            viewPoint:[
+                {
+                    id:1,
+                    image:photo1
+                },
+                {
+                    id:2,
+                    image:photo2
+                },
+                {
+                    id:3,
+                    image:photo3
+                },
+                {
+                    id:4,
+                    image:photo4
+                },
+                {
+                    id:5,
+                    image:photo5
+                },
+                {
+                    id:6,
+                    image:photo6
+                },
+                {
+                    id:7,
+                    image:photo7
+                },
+            ],
+            svg:[
+                {id:1, svg:<LineGraph/>, boldText:2, text:'yillik buyuk tarix'},
+                {id:2, svg:<LocationSvg/>, boldText:"Shaxarning", text:'qoq markazida'},
+                {id:3, svg:<Employee/>, boldText:'20+', text:'professional xodimlar'}
+            ]
         }
     },
     reducers: {
@@ -577,6 +617,7 @@ const ProductReducer = createSlice({
         }
     }
 })
+//API call
 // export const getProductFunc = () => apiCall({
 //     url: '/product/all',
 //     method: 'GET',

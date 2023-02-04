@@ -40,10 +40,6 @@ function RequestCall() {
         }
     }
 
-    // const getPhone = (e) => {
-    //     const valPhone = TargetPhoneNumber(e.target.value)
-    //     setNumber(valPhone)
-    // }
 
     return (
         <section id={'place'} className={Style.register}>

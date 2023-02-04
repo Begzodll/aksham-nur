@@ -28,7 +28,7 @@ const Navbar = () => {
                 <ListGroup className={`${state ? "header-visible" : "header-hidden"}`}>
                     <a href={'/'} style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>Home</ListItem></a>
                     <a href={'/#place'} style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>Jo'y band qilish</ListItem></a>
-                    <a href={'/#menu'} style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>Menu</ListItem></a>
+                    <Link to={'/about'} style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>Biz haqimizda</ListItem></Link>
                     <Phone><Link to="tel:998335558080" style={{textDecoration: 'none'}} onClick={togglerBtn}><ListItem>
                         Qongiroq
                         qilish</ListItem></Link></Phone>

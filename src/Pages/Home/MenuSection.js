@@ -16,12 +16,9 @@ import {
     BtnGroup, Stiky
 } from "./style/MenuStyle";
 import NavigatorTab from "../../Components/NavigatorTab/NavigatorTab";
-import {toast} from "react-toastify";
-
 
 const MenuSection = ({product, clickOrder}) => {
 
-    // const objectLength = Object.keys(product).length;
     const [tabValue, setTabValue] = useState('')
     const [active, setActive] = useState(true)
 
