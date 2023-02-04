@@ -17,7 +17,7 @@ const AboutHeader = () => {
                             <BoxDesc>
                                 <TitleDesc>Biz Haqimizda</TitleDesc>
                                 <SubDesc>
-                                    Kompaniyamizning birinchi filiali 2021 yilda ochilgan bo’lib, shu kungacha
+                                    Restoranimiz AkShamNur binosi 2021 yilda ochilgan bo’lib, shu kungacha
                                     muvaffaqiyatli faoliyat yuritib kelmoqdaligini bilarmidingiz? 2 yil davomida kompaniya
                                     zamonaviy, kengaytirilgan tarmoqqa
                                     aylandi, u bugungi kunda O‘zbekiston bo‘ylab tez rivojilanayotgan restoranlardan
