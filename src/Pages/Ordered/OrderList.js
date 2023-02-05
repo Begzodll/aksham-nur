@@ -38,8 +38,8 @@ const OrderList = () => {
     const today = new Date(),
         date = today.getFullYear() + ' - ' + (today.getMonth() + 1) + ' - ' + today.getDate()
 
-    const sendData = ({token, chatId, data}) => {
-        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${data}`)
+    const sendData = ({data}) => {
+        fetch(`https://api.telegram.org/bot5914837575:AAGYWPHHo-FEBtM4Lh_Uocn4FiZdvIetU9Y/sendMessage?chat_id=-1001611008926&text=${data}`)
             .then((res) => res.json())
             .then((result) => console.log(result.ok))
             .catch(err => console.log(err))
@@ -49,8 +49,6 @@ const OrderList = () => {
         event.preventDefault()
         if (name !== '' && getNumber.length >= 13 && currentLocation.length >= 1) {
             sendData({
-                token: process.env.REACT_APP_TOKEN_TG_API,
-                chatId: process.env.REACT_APP_TG_CHATID,
                 data: `
                         🔶 Yangi buyurtma == Vaqti ${date} ♦
                         🔶 Ismi: ${name} ♦️

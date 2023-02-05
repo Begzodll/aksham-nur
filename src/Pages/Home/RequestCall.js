@@ -13,8 +13,8 @@ function RequestCall() {
     const today = new Date(),
         date = today.getFullYear() + ' - ' + (today.getMonth() + 1) + ' - ' + today.getDate()
 
-    const sendMessage = ({token, chatId, data}) => {
-        fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${data}`)
+    const sendMessage = ({data}) => {
+        fetch(`https://api.telegram.org/bot5914837575:AAGYWPHHo-FEBtM4Lh_Uocn4FiZdvIetU9Y/sendMessage?chat_id=-1001611008926&text=${data}`)
             .then((res) => res.json())
             .then((result) => console.log(result.ok))
             .catch(err => console.log(err))
@@ -25,12 +25,11 @@ function RequestCall() {
         }
     }
 
+
     function handleSubmit(event) {
         event.preventDefault()
         if (name !== '' && number !== '') {
             sendMessage({
-                token: process.env.REACT_APP_TOKEN_TG_API,
-                chatId: process.env.REACT_APP_TG_CHATID,
                 data: `Mijoz  joy band qilgani == Vaqti ${date} || Ismi: ${name} || Telefon qilish vaqti:${option} || Telefon raqami: ${number}`
             })
             setName('')
