@@ -9,6 +9,7 @@ import store from "./store/store";
 import './Assets/css/global.scss';
 import 'swiper/css';
 import 'react-toastify/dist/ReactToastify.css';
+import "aos/dist/aos.css";
 
 const container = document.getElementById('root')
 const root = createRoot(container);

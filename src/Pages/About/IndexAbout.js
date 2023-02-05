@@ -3,6 +3,7 @@ import Statistic from "./Statistic";
 import AboutGallery from "./AboutGalery";
 
 import {AboutMainContainer} from "./StyleAbout/AboutHeaderStyle";
+import Accordion from "./Accordion";
 
 const IndexAbout = () => {
     return (
@@ -10,6 +11,7 @@ const IndexAbout = () => {
             <AboutHeader/>
             <Statistic/>
             <AboutGallery/>
+            <Accordion/>
         </AboutMainContainer>
     )
 }

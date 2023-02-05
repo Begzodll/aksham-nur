@@ -2,7 +2,6 @@ import {useEffect, useState} from "react";
 import {connect} from "react-redux";
 import GetLocation from "../../Components/Modals/getLocation";
 import {Link} from "react-router-dom";
-import {TargetPhoneNumber} from "../../Helpers/helpers";
 import {ContainerFluid, ProductDesc, ProductImage, ProductName, SubTitle} from "../Home/style/MenuStyle";
 import {
     HeaderText,

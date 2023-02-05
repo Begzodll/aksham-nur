@@ -10,9 +10,10 @@ import {
     Quotes
 } from "./StyleAbout/AboutHeaderStyle";
 import {Swiper, SwiperSlide} from "swiper/react";
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 
 import {Autoplay, Navigation} from "swiper";
+import AOS from "aos";
 
 const AboutGallery = ({aboutSection}) => {
 
@@ -21,9 +22,16 @@ const AboutGallery = ({aboutSection}) => {
 
     const getCountElement = () => 1
 
+    useEffect(()=>{
+        AOS.init({
+            duration:1000,
+        })
+    },[])
+
+
     return (
         <GalleryMainContainer>
-            <Block>
+            <Block  data-aos="fade-up">
                 <BlockItem>
                     <Swiper
                         modules={[Navigation, Autoplay]}
@@ -42,6 +50,7 @@ const AboutGallery = ({aboutSection}) => {
                             delay: 1500,
                         }}
                         style={{margin:'0',padding:"0"}}
+                        data-aos="fade-right" data-aos-delay="500"
                     >
                         {
                             aboutSection.gallery.photos.map((item, index) => (
@@ -55,8 +64,8 @@ const AboutGallery = ({aboutSection}) => {
                     </Swiper>
                 </BlockItem>
                 <BlockItem>
-                    <TextArea>
-                        <MainTitle>{aboutSection.gallery.textHeader}</MainTitle>
+                    <TextArea data-aos="fade-left">
+                        <MainTitle >{aboutSection.gallery.textHeader}</MainTitle>
                         <BlockQuotes>
                             {
                                 aboutSection.gallery.tick.map(item => <div key={item.id}>

@@ -1,4 +1,6 @@
 import {connect} from "react-redux";
+import {useEffect} from "react";
+import AOS from "aos";
 import {
     BlockStatistic,
     BoxStatistic,
@@ -10,12 +12,19 @@ import {
 } from "./StyleAbout/AboutHeaderStyle";
 
 const Statistic = ({aboutSection}) => {
+
+    useEffect(()=>{
+        AOS.init({
+            duration:1000,
+        })
+    },[])
+
     return (
         <StatisticContainer>
             <BlockStatistic>
                 {
                     aboutSection.svg.map(item => (
-                        <BoxStatistic key={item.id}>
+                        <BoxStatistic key={item.id} data-aos="fade-up">
                             <Flex>
                                 <Svg>{item.svg}</Svg>
                                 <TextBlock>

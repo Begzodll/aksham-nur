@@ -1,4 +1,5 @@
-import chef from '../../Assets/images/cheef.jpg';
+import {useEffect} from "react";
+import AOS from "aos";
 import {
     AboutMainContainer,
     ShadowContainer,
@@ -6,17 +7,26 @@ import {
     BlockDesc, TitleDesc,
     BoxDesc, SubDesc,PhotoContainer
 } from './StyleAbout/AboutHeaderStyle'
+import chef from '../../Assets/images/cheef.jpg';
 
 const AboutHeader = () => {
+
+    useEffect(()=>{
+        AOS.init({
+            duration:1000,
+        })
+    },[])
+
+
     return (
         <AboutMainContainer>
             <PhotoContainer src={chef}>
                 <ShadowContainer>
                     <Container>
-                        <BlockDesc>
+                        <BlockDesc data-aos="fade-up">
                             <BoxDesc>
-                                <TitleDesc>Biz Haqimizda</TitleDesc>
-                                <SubDesc>
+                                <TitleDesc data-aos="fade-up" data-aos-delay="500">Biz Haqimizda</TitleDesc>
+                                <SubDesc data-aos="fade-up" data-aos-delay="1000">
                                     Restoranimiz AkShamNur binosi 2021 yilda ochilgan bo’lib, shu kungacha
                                     muvaffaqiyatli faoliyat yuritib kelmoqdaligini bilarmidingiz? 2 yil davomida kompaniya
                                     zamonaviy, kengaytirilgan tarmoqqa

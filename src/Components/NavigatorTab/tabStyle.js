@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const NavTabContainer = styled.div`
   position: relative;
   transition: 1s all ease;
+  background: red;
+  z-index: 999;
 `
 export const BtnGroup = styled.div`
   border-radius: 20px;

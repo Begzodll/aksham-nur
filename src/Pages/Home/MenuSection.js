@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {connect} from "react-redux";
 import {clickOrder} from "../../store/reducers/ProductReducer";
 import {NeonBtn, NeonLinkBtn} from "../../Components/Buttons/Buttons";
@@ -35,11 +35,10 @@ const MenuSection = ({product, clickOrder}) => {
         setActive(p => !p)
     }
 
-
     return (
         <ContainerFluid>
             <section id={'menu'}/>
-            <MenuTitle>Bizning Taomnomaniz</MenuTitle>
+            <MenuTitle data-aos="fade-up">Bizning Taomnomaniz</MenuTitle>
             <Stiky>
                 <NavigatorTab setVal={handleChanged} setActive={setActive} active={active}/>
             </Stiky>

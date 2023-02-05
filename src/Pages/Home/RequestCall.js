@@ -1,7 +1,8 @@
 import Style from './style/Register.module.scss';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 // import {TargetPhoneNumber} from "../../Helpers/helpers";
 import {toast} from "react-toastify";
+import AOS from "aos";
 
 function RequestCall() {
 
@@ -40,24 +41,38 @@ function RequestCall() {
         }
     }
 
+    useEffect(()=>{
+        AOS.init({
+            duration:1000,
+        })
+    },[])
+
 
     return (
         <section id={'place'} className={Style.register}>
-            <div className={Style.register__case}>
+            <div className={Style.register__case} data-aos="fade-down">
                 <div className={Style.register__case__title}>
-                    <p>Joy band qilish</p>
+                    <p data-aos="fade-right" data-aos-delay="300">Joy band qilish</p>
                 </div>
                 <div className={Style.register__case__form}>
                     <form onSubmit={null}>
                         <input type="text" placeholder={'Ismingiz?'}
                                onChange={(e) => setName(e.target.value)}
                                value={name}
+                               data-aos="fade-down-right" data-aos-delay="500"
                         />
-                        <input type="tel" placeholder={'Telefon raqamingiz?'} max={13}  maxLength={13}
-                               onChange={e => setNumber(e.target.value)} value={number}/>
-                        <input type="text" placeholder={'Qulay vaqt'} max={4}  maxLength={4}
-                               onChange={(e) => setOption(e.target.value)}/>
-                        <button onClick={handleSubmit}/>
+                        <input type="tel" placeholder={'Telefon raqamingiz?'}
+                               max={13}  maxLength={13}
+                               onChange={e => setNumber(e.target.value)}
+                               value={number}
+                               data-aos="fade-down-left" data-aos-delay="600"
+                        />
+                        <input type="text" placeholder={'Qulay vaqt'}
+                               max={4}  maxLength={4}
+                               onChange={(e) => setOption(e.target.value)}
+                               data-aos="fade-up-right" data-aos-delay="700"
+                        />
+                        <button onClick={handleSubmit} data-aos="fade-up-left" data-aos-delay="800"/>
                     </form>
                 </div>
             </div>
