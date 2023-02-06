@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 // import {TargetPhoneNumber} from "../../Helpers/helpers";
 import {toast} from "react-toastify";
 import AOS from "aos";
+import {Helmet} from "react-helmet";
 
 function RequestCall() {
 
@@ -49,6 +50,18 @@ function RequestCall() {
 
     return (
         <section id={'place'} className={Style.register}>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>AkSkamnur Buyurtma bolimi</title>
+                <meta name="description" content="Joy band qilish" />
+                <meta name="description" content="Oldindan buyurtma berish" />
+                <meta name="keywords" content={`online buyurtma , online,  buyurtma,`}/>
+                <meta name="description"
+                      content="Milliy taomlar va mazzali shirinlik hamda qarsildoq fastfoodlar kam sarmoya va ulkan natija"/>
+                <meta name="keywords"
+                      content="Mazalli taomlar, taomlar, milliy taomlar, sharxon milliy taomlari, uzbek milliy taomlari"/>
+                <link rel="canonical" href="https://akshamnur.uz/"/>
+            </Helmet>
             <div className={Style.register__case} data-aos="fade-down">
                 <div className={Style.register__case__title}>
                     <p data-aos="fade-right" data-aos-delay="300">Joy band qilish</p>

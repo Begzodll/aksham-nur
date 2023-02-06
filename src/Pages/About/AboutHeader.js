@@ -8,6 +8,7 @@ import {
     BoxDesc, SubDesc, PhotoContainer
 } from './StyleAbout/AboutHeaderStyle'
 import chef from '../../Assets/images/cheef.jpg';
+import {Helmet} from "react-helmet";
 
 const AboutHeader = () => {
 
@@ -20,6 +21,18 @@ const AboutHeader = () => {
 
     return (
         <AboutMainContainer>
+            <Helmet>
+                <meta charSet="utf-8" />
+                <title>AkSkamnur haqida malumot</title>
+                <meta name="description" content="Restoranimiz tarixi" />
+                <meta name="description" content="Professional oshpaz, Professional ishchilar " />
+                <meta name="description"
+                      content="Milliy taomlar va mazzali shirinlik hamda qarsildoq fastfoodlar kam sarmoya va ulkan natija"/>
+                <meta name="keywords"
+                      content="Mazalli taomlar, taomlar, milliy taomlar, sharxon milliy taomlari, uzbek milliy taomlari"/>
+                <meta name="keywords" content={`akshamnur, akshamnur haqida, top restoran, shaxrixon resoran`}/>
+                <link rel="canonical" href="https://akshamnur.uz/"/>
+            </Helmet>
             <PhotoContainer src={chef}>
                 <ShadowContainer>
                     <Container>

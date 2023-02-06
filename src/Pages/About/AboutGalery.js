@@ -14,6 +14,7 @@ import React, {useEffect, useRef} from "react";
 
 import {Autoplay, Navigation} from "swiper";
 import AOS from "aos";
+import {Helmet} from "react-helmet";
 
 const AboutGallery = ({aboutSection}) => {
 
@@ -69,6 +70,17 @@ const AboutGallery = ({aboutSection}) => {
                         <BlockQuotes>
                             {
                                 aboutSection.gallery.tick.map(item => <div key={item.id}>
+                                    <Helmet>
+                                        <meta charSet="utf-8" />
+                                        <title>AkSkamnur atmosferasi</title>
+                                        <meta name="description"
+                                              content="Milliy taomlar va mazzali shirinlik hamda qarsildoq fastfoodlar kam sarmoya va ulkan natija"/>
+                                        <meta name="description" content="Masofaviy buyurtma" />
+                                        <meta name="keywords" content={`${item.text} | `}/>
+                                        <meta name="keywords"
+                                              content="Mazalli taomlar, taomlar, milliy taomlar, sharxon milliy taomlari, uzbek milliy taomlari"/>
+                                        <link rel="canonical" href="https://akshamnur.uz/"/>
+                                    </Helmet>
                                     <Quotes icon={item.svg}>{item.text}</Quotes>
                                 </div>)
                             }

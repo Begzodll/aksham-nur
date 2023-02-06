@@ -16,6 +16,7 @@ import {
     BtnGroup, Stiky
 } from "./style/MenuStyle";
 import NavigatorTab from "../../Components/NavigatorTab/NavigatorTab";
+import {Helmet} from "react-helmet";
 
 const MenuSection = ({product, clickOrder}) => {
 
@@ -54,6 +55,19 @@ const MenuSection = ({product, clickOrder}) => {
                             }
                         }).map((item, index) => (
                             <div key={index}>
+                                <Helmet>
+                                    <meta charSet="utf-8" />
+                                    <title>AkSkamnur Taomnomalari</title>
+                                    <meta name="description"
+                                          content="Milliy taomlar va mazzali shirinlik hamda qarsildoq fastfoodlar kam sarmoya va ulkan natija"/>
+                                    <meta name="description" content="Bizning taomlar" />
+                                    <meta name="description" content="Mazali milliy taomlar" />
+                                    <meta name="keywords" content={`${item.name} | `}/>
+                                    <meta name="keywords" content={`${item.description} | `}/>
+                                    <meta name="keywords"
+                                          content="Mazalli taomlar, taomlar, milliy taomlar, sharxon milliy taomlari, uzbek milliy taomlari"/>
+                                    <link rel="canonical" href="https://akshamnur.uz/"/>
+                                </Helmet>
                                 <Card>
                                     <ProductImage
                                         src={item.image}
