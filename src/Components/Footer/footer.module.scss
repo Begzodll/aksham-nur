@@ -5,7 +5,7 @@ $yellow-color: #FFF000;
 //$blue-color: rgba(73, 131, 255, 0.84);
 .footer {
   background: $footer-bg;
-  height: 583px;
+  height: auto;
   //margin-top: 1rem;
   padding: 80px;
   font-family: sans-serif;
@@ -112,10 +112,10 @@ $yellow-color: #FFF000;
         svg{
           margin: 0 14px;
           path{
-            fill: #334155;
+            fill: $yellow-color;
             &:hover{
               cursor: pointer;
-              fill:$yellow-color;
+              fill: rgba(86, 113, 253, 0.64);
             }
           }
         }
@@ -174,10 +174,10 @@ $yellow-color: #FFF000;
       svg{
         margin: 0 14px;
         path{
-          fill: #653B9B;
+          fill: $yellow-color;
           &:hover{
             cursor: pointer;
-            fill:$yellow-color;
+            fill:#653B9B;
           }
         }
       }

@@ -612,7 +612,7 @@ const ProductReducer = createSlice({
             svg: [
                 {id: 1, svg: <LineGraph/>, boldText: 2, text: 'yillik ulkan tajriba'},
                 {id: 2, svg: <LocationSvg/>, boldText: "Shaxarning", text: 'qoq markazida'},
-                {id: 3, svg: <Employee/>, boldText: '20+', text: 'professional xodimlar'}
+                {id: 3, svg: <Employee/>, boldText: '50+', text: 'professional xodimlar'}
             ],
             gallery: {
                 photos: [
@@ -631,7 +631,7 @@ const ProductReducer = createSlice({
                     Bugun biz haqli ravishda <b>faxrlanamizki</b>, bizning yetkazib berishimiz
                     O'zbekistondagi <b>eng tezkorlaridan</b> biri bo'ladi. <br/> <br/>
                     — Masalan, Shahrixon shahrida
-                    <b>buyurtma olingan paytdan</b> boshlab o‘rtacha yetkazib berish muddati bor-yo‘g‘i <b>15-20 daqiqani</b> tashkil etadi.
+                    <b>buyurtma olingan paytdan</b> boshlab o‘rtacha yetkazib berish muddati bor-yo‘g‘i <b>20-25 daqiqani</b> tashkil etadi.
                 </span>,
                 tick: [
                     {id: 1, svg:framer, text: <div><b>Mazali</b> Taomlar</div>},

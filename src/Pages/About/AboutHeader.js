@@ -5,17 +5,17 @@ import {
     ShadowContainer,
     Container,
     BlockDesc, TitleDesc,
-    BoxDesc, SubDesc,PhotoContainer
+    BoxDesc, SubDesc, PhotoContainer
 } from './StyleAbout/AboutHeaderStyle'
 import chef from '../../Assets/images/cheef.jpg';
 
 const AboutHeader = () => {
 
-    useEffect(()=>{
+    useEffect(() => {
         AOS.init({
-            duration:1000,
+            duration: 1000,
         })
-    },[])
+    }, [])
 
 
     return (
@@ -27,12 +27,13 @@ const AboutHeader = () => {
                             <BoxDesc>
                                 <TitleDesc data-aos="fade-up" data-aos-delay="500">Biz Haqimizda</TitleDesc>
                                 <SubDesc data-aos="fade-up" data-aos-delay="1000">
-                                    Restoranimiz AkShamNur binosi 2021 yilda ochilgan bo’lib, shu kungacha
-                                    muvaffaqiyatli faoliyat yuritib kelmoqdaligini bilarmidingiz? 2 yil davomida kompaniya
+                                    Restoranimiz AkShamNur binosi 2022 yilda ochilgan bo’lib, shu kungacha
+                                    muvaffaqiyatli faoliyat yuritib kelmoqdaligini bilarmidingiz? 1 yil davomida
+                                    kompaniya
                                     zamonaviy, kengaytirilgan tarmoqqa
-                                    aylandi, u bugungi kunda O‘zbekiston bo‘ylab tez rivojilanayotgan restoranlardan
-                                    biridur, o‘zining eng
-                                    tezkor yetkazib berish xizmatini, zamonaviy IT-infratuzilmasini va 20 dan ortiq
+                                    aylandi, u bugungi kunda O‘zbekiston bo‘ylab tez rivojlanayotgan restoranlardan
+                                    biridir, o‘zining eng tezkor yetkazib berish xizmatini, zamonaviy
+                                    IT-infratuzilmasini va 50 dan ortiq
                                     xodimlarni o‘z ichiga oladi.
                                 </SubDesc>
                             </BoxDesc>

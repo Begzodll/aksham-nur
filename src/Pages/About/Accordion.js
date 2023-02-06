@@ -3,28 +3,28 @@ import './StyleAbout/accordion.css';
 const faqs = [
     {
         id: 1,
-        header: "AkShamNur qaerda joilashgan",
-        text: `Andijon viluyati, Shaxrixon tumani markazida joilashgan`
+        header: "AkShamNur qaerda joilashgan ?",
+        text: `Andijon viloyati, Shaxrixon tumani, Hamkor-Bank oldida joilashgan 😊`
     },
     {
         id: 2,
-        header: "AkShamNur, kechasi yetkazib berish xizmatidan foydalansam bo’ladimi?",
-        text: `Bu xizmat xozircha rejalashtirilmoqda. Ammo kunduzi yetkazib berish xizmati mavjud`
+        header: "AkShamNur, kechasi yetkazib berish xizmatidan foydalansam bo’ladimi ?",
+        text: `Bu xizmat xozircha rejalashtirilmoqda. Ammo kechki 23:00 ga qadar buyurtma bersangiz boladi 😊`
     },
     {
         id: 3,
-        header: "AkShamNur, sizda chegirmalar bo’lib turadimi?",
-        text: `Albatta! Chegirmalar va maxsus takliflardan xabardor bo'lib turish uchun bizni kuzatib boring`
+        header: "AkShamNur, sizda chegirmalar bo’lib turadimi ?",
+        text: `Albatta! Chegirmalar va maxsus takliflardan xabardor bo'lib turish uchun bizni kuzatib boring 😊`
     },
     {
         id: 4,
-        header: "AkShamNur, men ovqatlarning kaloriyasiga qattiq e’tibor beraman. Oziq-ovqatlaringiz kaloriyasi juda ham yuqorimi? Menga biror narsa taklif qila olasizmi?",
-        text: `Bizning menyumizdagi taomlarning xilma-xilligi sizning dietangizni kerakli tarzda tanlash imkonini beradi. Kaloriya tarkibiga kelsak - bizning taomlarimiz haqiqatan ham to'yimli, ammo ular qomatingizga zarar etkazmaydi - biz KBJU (kaloriyalar - yog'lar - oqsillar - uglevodlar) ning optimal kombinatsiyasida tabiiy ingredientlardan foydalanamiz.`
+        header: "AkShamNur, men ovqatlarning kaloriyasiga qattiq e’tibor beraman. Oziq-ovqatlaringiz kaloriyasi juda ham yuqorimi? Menga biror narsa taklif qila olasizmi ?",
+        text: `Bizning menyumizdagi taomlarning xilma-xilligi sizning dietangizni kerakli tarzda tanlash imkonini beradi. Kaloriya tarkibiga kelsak - bizning taomlarimiz haqiqatan ham to'yimli, ammo ular qomatingizga zarar etkazmaydi - biz KBJU (kaloriyalar - yog'lar - oqsillar - uglevodlar) ning optimal kombinatsiyasida tabiiy ingredientlardan foydalanamiz. 😊`
     },
     {
         id: 5,
-        header: "Yaqinda men sizning restoranlaringizdan yetkazib berish xizmatidan foydalandim.  Siz uchun qiziqarli g'oyalarim bor (menyu, dizayn, xodimlarning ishi va boshqalar).  Ular haqida sizga qanday qilib ayta olaman?",
-        text: "Shikoyat va takliflar xizmatiga qo'ng'iroq qiling - +998 33 555 80 80, Instagram sahifasida shaxsiy xabar yozing. Biz har doim sizning fikr va tavsiyalaringizni mamnuniyat bilan qabul qilamiz."
+        header: "Yaqinda men sizning restoranlaringizdan yetkazib berish xizmatidan foydalandim.  Siz uchun qiziqarli g'oyalarim bor (menyu, dizayn, xodimlarning ishi va boshqalar).  Ular haqida sizga qanday qilib ayta olaman ?",
+        text: "Shikoyat va takliflar xizmatiga qo'ng'iroq qiling - +998 33 555 80 80, Instagram sahifasida shaxsiy xabar yozing. Biz har doim sizning fikr va tavsiyalaringizni mamnuniyat bilan qabul qilamiz. 😊"
     }
 ]
 

@@ -4,6 +4,7 @@ export const BannerBackground = styled.div`
   width: 100%;
   height: 650px;
   background-image: url(${({src}) => src});
+  overflow: hidden;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -33,6 +34,7 @@ export const MainText = styled.p`
   margin-top: 8rem;
   font-size: 53px;
   font-weight: bold;
+  text-transform: uppercase;
   @media (max-width: 730px) {
     font-size: 47px;
   }

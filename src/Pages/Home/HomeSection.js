@@ -17,7 +17,7 @@ const HomeSection = () => {
             <BannerBackground src={banner} mobile={bannerMobile}>
                 <ShadowContainer>
                     <MainText data-aos="fade-up" >Aksham Nurga xush kelibsiz</MainText>
-                    <SubText data-aos="fade-up" data-aos-delay="500">Biz sizni kutayotgan edik <br/> Biz sizni shirin taom bilan jazo'laymiz</SubText>
+                    <SubText data-aos="fade-up" data-aos-delay="500">Biz sizni kutayotgan edik <br/> Biz sizni shirin taom bilan jazolaymiz</SubText>
                     <BtnGroup>
                         <BtnOrder href={'#menu'} data-aos="fade-right" data-aos-delay="1000">Buyurtma berish</BtnOrder>
                         <BtnOrder href="tel:998335558080" data-aos="fade-left" data-aos-delay={"1000"}>Bo'glanish</BtnOrder>

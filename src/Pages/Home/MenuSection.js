@@ -38,7 +38,7 @@ const MenuSection = ({product, clickOrder}) => {
     return (
         <ContainerFluid>
             <section id={'menu'}/>
-            <MenuTitle data-aos="fade-up">Bizning Taomnomaniz</MenuTitle>
+            <MenuTitle data-aos="fade-up">Bizning Taomnomamiz</MenuTitle>
             <Stiky>
                 <NavigatorTab setVal={handleChanged} setActive={setActive} active={active}/>
             </Stiky>

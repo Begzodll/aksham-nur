@@ -155,6 +155,7 @@ export const GalleryMainContainer = styled.div`
   margin: 0 auto;
   height: auto;
   padding: 2rem 0 8rem 0;
+  overflow: hidden;
   @media(max-width: 1120px){
     width: 95%;
   }

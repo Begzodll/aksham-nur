@@ -5,22 +5,25 @@ import {DoubleButton} from "../Buttons/Buttons";
 import {useWindowDimensions} from "../../Helpers/helpers";
 
 import {Navigation, Autoplay} from "swiper";
-import { Swiper, SwiperSlide } from 'swiper/react';
+import {Swiper, SwiperSlide} from 'swiper/react';
 
 import partner from '../../Assets/Partner/BTS.jpeg';
-import logo from '../../Assets/images/logo/logo2.png'
+import pepsi from '../../Assets/Partner/pepsi.jpg';
+import viko from '../../Assets/Partner/VİKO.jpg';
+import coke from '../../Assets/Partner/coke.jpg';
+import gumbaz from '../../Assets/Partner/gumbazShirinliklari.jpg';
+import logo from '../../Assets/images/logo/logo2.png';
+import {InstagramSvg} from "../../Assets/svg/svg";
 
 
 function Footer() {
 
     const content = [
-        {id:1,img:partner},
-        {id:2,img:partner},
-        {id:3,img:partner},
-        {id:4,img:partner},
-        {id:5,img:partner},
-        {id:6,img:partner},
-        {id:7,img:partner},
+        {id: 1, img: partner},
+        {id: 2, img: pepsi},
+        {id: 3, img: viko},
+        {id: 4, img: coke},
+        {id: 5, img: gumbaz},
     ]
 
     const navigatePrev = useRef(null);
@@ -90,27 +93,21 @@ function Footer() {
             <div className={Style.footer__contact__media}>
                 <p>&copy; Akshamnur cafe | Invented in 2022 </p>
                 <div className={Style.footer__contact__media__icon}>
-                    {/*{*/}
-                    {/*    content.footer.svg.map((item, index) => (*/}
-                    {/*        <a key={index + 1} href={`${item.href ? item.href : '#'}`}>{item.icon}</a>*/}
-                    {/*    ))*/}
-                    {/*}*/}
+                            <a href={`https://www.instagram.com/aksham_nur/`}><InstagramSvg/></a>
                 </div>
             </div>
             <div className={Style.footer__contact__number}>
                 <a href={'tel:998335558080'}>+998 33 555 80 80</a>
-                <p>murojat uchun</p>
+                <p>murojaat uchun</p>
             </div>
         </div>
 
         <div className={Style.footer__tablet}>
-            <p>&copy; Akshamnur cafe | Invented 2023 </p>
+            <p>&copy; Akshamnur cafe | Invented in 2022 </p>
             <div className={Style.footer__tablet__icon}>
-                {/*{*/}
-                {/*    content.footer.svg.map((item, index) => (*/}
-                {/*        <span key={index + 1}>{item.icon}</span>*/}
-                {/*    ))*/}
-                {/*}*/}
+                <div className={Style.footer__contact__media__icon}>
+                    <a href={`https://www.instagram.com/aksham_nur/`}><InstagramSvg/></a>
+                </div>
             </div>
         </div>
     </div>

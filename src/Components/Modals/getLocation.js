@@ -13,7 +13,7 @@ import {
 
 const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) => {
 
-    const [centerSelected, setCenterSelected] = useState([40.709698, 72.057462])
+    const [centerSelected, setCenterSelected] = useState([40.709698, 72.057462]);
 
     const center = {
         center: centerSelected,
@@ -35,6 +35,7 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
         }
     }
 
+
     return (
         <div>
             {
@@ -43,28 +44,30 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
                         <ModalBlock>
                             <ModalCard>
                                 <MapStyle>
-                                    <YMaps>
-                                        <Map
-                                            state={center}
-                                            width="100%"
-                                            height="400px"
-                                            modules={["control.SearchControl"]}
-                                            onClick={(e) => onMapClick(e)}
-                                        >
-                                            <ZoomControl
-                                                options={{float: "none", position: {top: 100, right: 10}}}
-                                            />
-                                            <Placemark options={{
-                                                iconImageSize: [32, 32],
-                                            }} geometry={currentLocation}/>
-                                            <FullscreenControl/>
-                                            <GeolocationControl/>
-                                            <SearchControl/>
-                                        </Map>
-                                    </YMaps>
+                                    Loading...
+                                  <YMaps>
+                                            <Map
+                                                state={center}
+                                                width="100%"
+                                                height="400px"
+                                                modules={["control.SearchControl"]}
+                                                onClick={(e) => onMapClick(e)}
+                                            >
+                                                <ZoomControl
+                                                    options={{float: "none", position: {top: 100, right: 10}}}
+                                                />
+                                                <Placemark options={{
+                                                    iconImageSize: [32, 32],
+                                                }} geometry={currentLocation}/>
+                                                <FullscreenControl/>
+                                                <GeolocationControl/>
+                                                <SearchControl/>
+                                            </Map>
+                                        </YMaps>
                                 </MapStyle>
                                 <CloseBtn onClick={() => setToggler(p => !p)}>X</CloseBtn>
                                 <LocationBtn onClick={findMe}>Meni izlash</LocationBtn>
+                                <LocationBtn onClick={() => setToggler(p => !p)}>Yopish</LocationBtn>
                             </ModalCard>
                         </ModalBlock>
                     </ContainerGetLocation> : ""
