@@ -27,7 +27,7 @@ const faqs = [
         text: "Shikoyat va takliflar xizmatiga qo'ng'iroq qiling - +998 33 555 80 80, Instagram sahifasida shaxsiy xabar yozing. Biz har doim sizning fikr va tavsiyalaringizni mamnuniyat bilan qabul qilamiz. 😊"
     }
 ]
-
+    
 const AccordionItem = (props) => {
     const contentEl = useRef();
     const { handleToggle, active, faq } = props;

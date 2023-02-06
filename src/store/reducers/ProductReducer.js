@@ -94,6 +94,11 @@ import insidePhoto6 from '../../Assets/images/photoOfView/6.jpg'
 import insidePhoto7 from '../../Assets/images/photoOfView/7.jpg'
 import framer from '../../Assets/svg/Frame.png'
 
+//Icons
+import {InstagramSvg} from "../../Assets/svg/svg";
+import {TelegramSvg} from "../../Assets/svg/svg";
+import {FacebookSvg} from "../../Assets/svg/svg";
+import {TikTokSvg} from "../../Assets/svg/svg";
 
 const ProductReducer = createSlice({
     name: 'product',
@@ -610,7 +615,9 @@ const ProductReducer = createSlice({
                 },
             ],
             svg: [
-                {id: 1, svg: <LineGraph/>, boldText: 2, text: 'yillik ulkan tajriba'},
+                {id: 1, svg: <LineGraph/>, boldText: 2, text: 'yillik ulkan tajr' +
+                        '' +
+                        'iba'},
                 {id: 2, svg: <LocationSvg/>, boldText: "Shaxarning", text: 'qoq markazida'},
                 {id: 3, svg: <Employee/>, boldText: '50+', text: 'professional xodimlar'}
             ],
@@ -642,6 +649,14 @@ const ProductReducer = createSlice({
                     {id: 6, svg:framer, text: <div> Yuqori <b>sifat</b></div>}
                 ]
             }
+        },
+        footer:{
+            socialIcons:[
+                {id:1, icon:<InstagramSvg/>, link:'https://www.instagram.com/aksham_nur/'},
+                {id:2, icon:<FacebookSvg/>, link:'https://www.facebook.com/akshamnur'},
+                {id:3, icon:<TelegramSvg/>, link:'https://t.me/aksham_nur'},
+                {id:4, icon:<TikTokSvg/>, link:'https://www.tiktok.com/@aksham_nur'},
+            ]
         }
     },
     reducers: {

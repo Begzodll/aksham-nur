@@ -1,6 +1,6 @@
 import React, {useRef} from "react";
 import Style from './footer.module.scss';
-
+import {connect} from "react-redux";
 import {DoubleButton} from "../Buttons/Buttons";
 import {useWindowDimensions} from "../../Helpers/helpers";
 
@@ -16,7 +16,7 @@ import logo from '../../Assets/images/logo/logo2.png';
 import {InstagramSvg} from "../../Assets/svg/svg";
 
 
-function Footer() {
+function Footer({footer}) {
 
     const content = [
         {id: 1, img: partner},
@@ -93,7 +93,12 @@ function Footer() {
             <div className={Style.footer__contact__media}>
                 <p>&copy; Akshamnur cafe | Invented in 2022 </p>
                 <div className={Style.footer__contact__media__icon}>
-                            <a href={`https://www.instagram.com/aksham_nur/`}><InstagramSvg/></a>
+                            {/*<a href={`https://www.instagram.com/aksham_nur/`}><InstagramSvg/></a>*/}
+                    {
+                        footer.socialIcons.map((item, index) => (
+                            <a key={index + 1} href={item.link}>{item.icon}</a>
+                        ))
+                    }
                 </div>
             </div>
             <div className={Style.footer__contact__number}>
@@ -103,14 +108,16 @@ function Footer() {
         </div>
 
         <div className={Style.footer__tablet}>
-            <p>&copy; Akshamnur cafe | Invented in 2022 </p>
+            <p>&copy; Akshamnur cafe | Invented in 2023 </p>
             <div className={Style.footer__tablet__icon}>
-                <div className={Style.footer__contact__media__icon}>
-                    <a href={`https://www.instagram.com/aksham_nur/`}><InstagramSvg/></a>
-                </div>
+                {
+                    footer.socialIcons.map((item, index) => (
+                        <a key={index + 1} href={item.link}>{item.icon}</a>
+                    ))
+                }
             </div>
         </div>
     </div>
 }
 
-export default Footer
+export default connect(({dataProduct:{footer}})=>({footer}))(Footer)
