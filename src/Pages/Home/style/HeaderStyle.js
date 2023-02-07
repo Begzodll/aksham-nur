@@ -31,6 +31,7 @@ export const MainText = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   margin-top: 8rem;
   font-size: 53px;
   font-weight: bold;
@@ -85,6 +86,7 @@ export const BtnOrder = styled.a`
   text-transform: uppercase;
   cursor: pointer;
   text-align: center;
+
   &:hover {
     background: rgba(0, 0, 0, 0.6);
     color: #cbcaca;
