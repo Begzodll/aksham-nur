@@ -1,0 +1,3 @@
+https://aksham-nur.vercel.app/
+https://aksham-nur.vercel.app/orders
+https://aksham-nur.vercel.app/about
