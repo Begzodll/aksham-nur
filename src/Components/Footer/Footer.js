@@ -9,11 +9,11 @@ import {Swiper, SwiperSlide} from 'swiper/react';
 
 import partner from '../../Assets/Partner/BTS.jpeg';
 import pepsi from '../../Assets/Partner/pepsi.jpg';
-import viko from '../../Assets/Partner/VİKO.jpg';
+import viko from '../../Assets/Partner/viko.jpg';
 import coke from '../../Assets/Partner/coke.jpg';
 import gumbaz from '../../Assets/Partner/gumbazShirinliklari.jpg';
+import tulpor from '../../Assets/Partner/tulpor.jpg';
 import logo from '../../Assets/images/logo/logo2.png';
-import {InstagramSvg} from "../../Assets/svg/svg";
 
 
 function Footer({footer}) {
@@ -24,6 +24,7 @@ function Footer({footer}) {
         {id: 3, img: viko},
         {id: 4, img: coke},
         {id: 5, img: gumbaz},
+        {id: 6, img: tulpor},
     ]
 
     const navigatePrev = useRef(null);

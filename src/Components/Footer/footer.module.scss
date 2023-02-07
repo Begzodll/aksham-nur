@@ -58,6 +58,7 @@ $yellow-color: #FFF000;
         width: 188px;
         height: 188px;
         background: $text-color;
+        border-radius: 20px;
         @media only screen and (max-width: 480px) {
           width: 100%;
           height: 200px;
@@ -65,6 +66,7 @@ $yellow-color: #FFF000;
         img{
           width: 100%;
           height: 100%;
+          border-radius: 20px;
         }
       }
     }
