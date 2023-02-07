@@ -80,7 +80,7 @@ const Accordion = () => {
                                     (FAQ)</h4>
                                 {faqs.map((faq, index) => {
                                     return (
-                                        <div>
+                                        <div key={index}>
                                             <Helmet>
                                                 <meta charSet="utf-8"/>
                                                 <title>Tez soraladigon savollar</title>

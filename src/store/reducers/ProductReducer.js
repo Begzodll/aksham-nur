@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {apiCall} from "../Action";
 
-//Images
+// Images //
 
 // Foods
 import meal2 from '../../Assets/images/MENU/meal/BIFSHTEKS.png'

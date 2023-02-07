@@ -1,9 +1,13 @@
-import {useEffect} from "react";
-import {BannerBackground, BtnGroup, BtnOrder, MainText, ShadowContainer, SubText} from "./style/HeaderStyle";
-import banner from "../../Assets/images/home-bg/v-3.jpg";
-import bannerMobile from '../../Assets/images/home-bg/mobile2.jpg';
-import AOS from 'aos';
+import React, {useEffect,Suspense} from "react";
 import {Helmet} from "react-helmet";
+import AOS from 'aos';
+
+import {BannerBackground, BtnGroup, BtnOrder, MainText, ShadowContainer, SubText} from "./style/HeaderStyle";
+
+import banner from '../../Assets/images/home-bg/v-3.jpg';
+
+const bannerMobile = React.lazy(() => import('../../Assets/images/home-bg/mobile2.jpg'));
+const Loader = React.lazy(() => import('../../Components/Loader/Loader'));
 
 const HomeSection = () => {
 
@@ -14,7 +18,7 @@ const HomeSection = () => {
     },[])
 
     return (
-        <div>
+        <Suspense fallback={<Loader/>}>
             <Helmet>
                 <meta charSet="utf-8" />
                 <title>AkShamNur Bosh saxifa</title>
@@ -32,7 +36,7 @@ const HomeSection = () => {
                     </BtnGroup>
                 </ShadowContainer>
             </BannerBackground>
-        </div>
+        </Suspense>
     )
 }
 export default HomeSection

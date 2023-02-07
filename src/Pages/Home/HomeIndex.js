@@ -1,13 +1,18 @@
-import HomeSection from "./HomeSection";
-import MenuSection from "./MenuSection";
-import RequestCall from "./RequestCall";
-import Basket from "../../Components/Basket/Basket";
-import {ScrollTop} from "../../Components/Buttons/Buttons";
+import React,{Suspense} from "react";
 import {Helmet} from "react-helmet";
 
+import {ScrollTop} from "../../Components/Buttons/Buttons";
+
+const Loader = React.lazy(() => import('../../Components/Loader/Loader'));
+const HomeSection = React.lazy(() => import('./HomeSection'));
+const MenuSection = React.lazy(() => import('./MenuSection'));
+const RequestCall = React.lazy(() => import('./RequestCall'));
+const Basket = React.lazy(() => import('../../Components/Basket/Basket'));
+
 const HomeIndex = () => {
+
     return (
-        <div>
+        <Suspense fallback={<Loader/>}>
             <Helmet>
                 <meta charSet="utf-8"/>
                 <title>AkSkamnur Taomlari</title>
@@ -25,7 +30,7 @@ const HomeIndex = () => {
             <MenuSection/>
             <RequestCall/>
             <ScrollTop/>
-        </div>
+        </Suspense>
     )
 }
 export default HomeIndex

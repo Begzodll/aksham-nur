@@ -1,8 +1,6 @@
-import {useEffect, useState} from "react";
+import React, {useEffect, useState, Suspense} from "react";
 import {connect} from "react-redux";
-import GetLocation from "../../Components/Modals/getLocation";
 import {Link} from "react-router-dom";
-import {TargetPhoneNumber} from "../../Helpers/helpers";
 import {ContainerFluid, ProductDesc, ProductImage, ProductName, SubTitle} from "../Home/style/MenuStyle";
 import {
     HeaderText,
@@ -16,6 +14,9 @@ import {
     InputItem
 } from "./OrderStyle";
 import {toast} from "react-toastify";
+
+const GetLocation = React.lazy(() => import('../../Components/Modals/getLocation'));
+const Loader = React.lazy(() => import('../../Components/Loader/Loader'));
 
 const OrderList = () => {
     const [mealList, setMealList] = useState([]);
@@ -74,57 +75,59 @@ const OrderList = () => {
     }
 
     return (
-        <ContainerFluid>
-            <OrderContainer>
-                {mealList.length > 0 ?
-                    <div>
-                        <GetLocation toggle={togler} setToggler={setTogler} setCurrentLocation={setCurrentLocation}
-                                     currentLocation={currentLocation}/>
+        <Suspense fallback={<Loader/>}>
+            <ContainerFluid>
+                <OrderContainer>
+                    {mealList.length > 0 ?
+                        <div>
+                            <GetLocation toggle={togler} setToggler={setTogler} setCurrentLocation={setCurrentLocation}
+                                         currentLocation={currentLocation}/>
+                            <HeaderText>
+                                Sizning Buyurtmalaringiz
+                            </HeaderText>
+
+                            <CardGroup>
+                                {
+                                    mealList.map((item, index) => (
+                                        <div key={index}>
+                                            <CardItem>
+                                                <ProductImage
+                                                    src={item.image}
+                                                    alt={`${item.image}`}/>
+                                                <SizeCards>
+                                                    <ProductName><SubTitle>Nomi:</SubTitle>{item.name}</ProductName>
+                                                    <ProductDesc><SubTitle>Masalliglar:</SubTitle>{item.description}
+                                                    </ProductDesc>
+                                                    <ProductDesc><SubTitle>Price:</SubTitle>{item.price}</ProductDesc>
+                                                </SizeCards>
+                                                <NeonBtn onClick={() => deleteItem(item)}>Ochirish</NeonBtn>
+                                            </CardItem>
+                                        </div>
+                                    ))
+                                }
+                            </CardGroup>
+                            <BillField>
+                                <InputGroup>
+                                    <InputItem placeholder={'Ismingiz'} onChange={(e) => setName(e.target.value)}/>
+                                    <InputItem placeholder={'Telefon raqamingiz'} type={'text'} maxLength={13} max={13}
+                                               onChange={(e) => setGetNumber(e.target.value)} value={getNumber}/>
+                                    <InputItem value={'Manzil kiritish'} type={'button'}
+                                               onClick={() => setTogler(p => !p)}/>
+                                    <InputItem value={'Yuborish'} type={'button'}
+                                               onClick={clickSubmit}/>
+                                </InputGroup>
+                            </BillField>
+                        </div>
+                        :
                         <HeaderText>
-                            Sizning Buyurtmalaringiz
+                            Sizda xo'zircha buyurtma yo'q <br/>
+                            <Link to={'/'}>Buyurtma berish</Link>
                         </HeaderText>
+                    }
 
-                        <CardGroup>
-                            {
-                                mealList.map((item, index) => (
-                                    <div key={index}>
-                                        <CardItem>
-                                            <ProductImage
-                                                src={item.image}
-                                                alt={`${item.image}`}/>
-                                            <SizeCards>
-                                                <ProductName><SubTitle>Nomi:</SubTitle>{item.name}</ProductName>
-                                                <ProductDesc><SubTitle>Masalliglar:</SubTitle>{item.description}
-                                                </ProductDesc>
-                                                <ProductDesc><SubTitle>Price:</SubTitle>{item.price}</ProductDesc>
-                                            </SizeCards>
-                                            <NeonBtn onClick={() => deleteItem(item)}>Ochirish</NeonBtn>
-                                        </CardItem>
-                                    </div>
-                                ))
-                            }
-                        </CardGroup>
-                        <BillField>
-                            <InputGroup>
-                                <InputItem placeholder={'Ismingiz'} onChange={(e) => setName(e.target.value)}/>
-                                <InputItem placeholder={'Telefon raqamingiz'} type={'text'} maxLength={13} max={13}
-                                           onChange={(e) => setGetNumber(e.target.value)} value={getNumber}/>
-                                <InputItem value={'Manzil kiritish'} type={'button'}
-                                           onClick={() => setTogler(p => !p)}/>
-                                <InputItem value={'Yuborish'} type={'button'}
-                                           onClick={clickSubmit}/>
-                            </InputGroup>
-                        </BillField>
-                    </div>
-                    :
-                    <HeaderText>
-                        Sizda xo'zircha buyurtma yo'q <br/>
-                        <Link to={'/'}>Buyurtma berish</Link>
-                    </HeaderText>
-                }
-
-            </OrderContainer>
-        </ContainerFluid>
+                </OrderContainer>
+            </ContainerFluid>
+        </Suspense>
     )
 }
 export default connect(({dataProduct: {product}}) => ({product}), null)(OrderList)

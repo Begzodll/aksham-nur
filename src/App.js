@@ -1,14 +1,15 @@
 import {Route, Routes} from "react-router-dom";
-import MainLayout from "./Layout/MainLayout";
-import HomeIndex from "./Pages/Home/HomeIndex";
-import IndexAbout from "./Pages/About/IndexAbout";
-import AuthPage from "./Pages/Authentication/AuthPage";
-import Admin from "./Pages/AdminPanel/Admin";
-import OrderList from "./Pages/Ordered/OrderList";
-import {Suspense} from "react";
+import React, {Suspense} from "react";
 
 import {ToastContainer} from 'react-toastify';
-import Loader from "./Components/Loader/Loader";
+
+const Loader = React.lazy(() => import('./Components/Loader/Loader'));
+const MainLayout = React.lazy(() => import('./Layout/MainLayout'));
+const HomeIndex = React.lazy(() => import('./Pages/Home/HomeIndex'));
+const IndexAbout = React.lazy(() => import('./Pages/About/IndexAbout'));
+const AuthPage = React.lazy(() => import('./Pages/Authentication/AuthPage'));
+const Admin = React.lazy(() => import('./Pages/AdminPanel/Admin'));
+const OrderList = React.lazy(() => import('./Pages/Ordered/OrderList'));
 
 const App = () => {
     return (

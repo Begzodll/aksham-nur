@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {CloseBtn, ContainerGetLocation, LocationBtn, MapStyle} from "./ModalStyle/locationStyle";
+import React, {useState, Suspense} from "react";
+import {CloseBtn, ContainerGetLocation, LocationBtn,MapStyle} from "./ModalStyle/locationStyle";
 import {ModalBlock, ModalCard} from "./ModalStyle/locationStyle";
 import {
     YMaps,
@@ -10,6 +10,8 @@ import {
     SearchControl,
     GeolocationControl
 } from "react-yandex-maps";
+
+const Loader = React.lazy(() => import('../Loader/Loader'));
 
 const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) => {
 
@@ -35,9 +37,8 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
         }
     }
 
-
     return (
-        <div>
+        <Suspense fallback={<Loader/>}>
             {
                 toggle ?
                     <ContainerGetLocation>
@@ -67,12 +68,12 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
                                 </MapStyle>
                                 <CloseBtn onClick={() => setToggler(p => !p)}>X</CloseBtn>
                                 <LocationBtn onClick={findMe}>Meni izlash</LocationBtn>
-                                <LocationBtn onClick={() => setToggler(p => !p)}>Yopish</LocationBtn>
+                                <LocationBtn onClick={() => setToggler(p => !p)}>Kiritish</LocationBtn>
                             </ModalCard>
                         </ModalBlock>
                     </ContainerGetLocation> : ""
             }
-        </div>
+        </Suspense>
     )
 }
 export default GetLocation

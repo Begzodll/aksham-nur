@@ -1,9 +1,10 @@
-import Style from './style/Register.module.scss';
-import {useEffect, useState} from "react";
-// import {TargetPhoneNumber} from "../../Helpers/helpers";
+import React,{useEffect, useState, Suspense} from "react";
 import {toast} from "react-toastify";
 import AOS from "aos";
 import {Helmet} from "react-helmet";
+
+import Style from './style/Register.module.scss'
+const Loader = React.lazy(() => import('../../Components/Loader/Loader'));
 
 function RequestCall() {
 
@@ -47,48 +48,49 @@ function RequestCall() {
         })
     },[])
 
-
     return (
-        <section id={'place'} className={Style.register}>
-            <Helmet>
-                <meta charSet="utf-8" />
-                <title>AkSkamnur Buyurtma bolimi</title>
-                <meta name="description" content="Joy band qilish" />
-                <meta name="description" content="Oldindan buyurtma berish" />
-                <meta name="keywords" content={`online buyurtma , online,  buyurtma,`}/>
-                <meta name="description"
-                      content="Milliy taomlar va mazzali shirinlik hamda qarsildoq fastfoodlar kam sarmoya va ulkan natija"/>
-                <meta name="keywords"
-                      content="Mazalli taomlar, taomlar, milliy taomlar, sharxon milliy taomlari, uzbek milliy taomlari"/>
-                <link rel="canonical" href="https://akshamnur.uz/"/>
-            </Helmet>
-            <div className={Style.register__case} data-aos="fade-down">
-                <div className={Style.register__case__title}>
-                    <p data-aos="fade-right" data-aos-delay="300">Joy band qilish</p>
+        <Suspense fallback={<Loader/>}>
+            <section id={'place'} className={Style.register}>
+                <Helmet>
+                    <meta charSet="utf-8" />
+                    <title>AkSkamnur Buyurtma bolimi</title>
+                    <meta name="description" content="Joy band qilish" />
+                    <meta name="description" content="Oldindan buyurtma berish" />
+                    <meta name="keywords" content={`online buyurtma , online,  buyurtma,`}/>
+                    <meta name="description"
+                          content="Milliy taomlar va mazzali shirinlik hamda qarsildoq fastfoodlar kam sarmoya va ulkan natija"/>
+                    <meta name="keywords"
+                          content="Mazalli taomlar, taomlar, milliy taomlar, sharxon milliy taomlari, uzbek milliy taomlari"/>
+                    <link rel="canonical" href="https://akshamnur.uz/"/>
+                </Helmet>
+                <div className={Style.register__case} data-aos="fade-down">
+                    <div className={Style.register__case__title}>
+                        <p data-aos="fade-right" data-aos-delay="300">Joy band qilish</p>
+                    </div>
+                    <div className={Style.register__case__form}>
+                        <form onSubmit={null}>
+                            <input type="text" placeholder={'Ismingiz?'}
+                                   onChange={(e) => setName(e.target.value)}
+                                   value={name}
+                                   data-aos="fade-down-right" data-aos-delay="500"
+                            />
+                            <input type="tel" placeholder={'Telefon raqamingiz?'}
+                                   max={13}  maxLength={13}
+                                   onChange={e => setNumber(e.target.value)}
+                                   value={number}
+                                   data-aos="fade-down-left" data-aos-delay="600"
+                            />
+                            <input type="text" placeholder={'Qulay vaqt'}
+                                   max={4}  maxLength={4}
+                                   onChange={(e) => setOption(e.target.value)}
+                                   data-aos="fade-up-right" data-aos-delay="700"
+                            />
+                            <button onClick={handleSubmit} data-aos="fade-up-left" data-aos-delay="800"/>
+                        </form>
+                    </div>
                 </div>
-                <div className={Style.register__case__form}>
-                    <form onSubmit={null}>
-                        <input type="text" placeholder={'Ismingiz?'}
-                               onChange={(e) => setName(e.target.value)}
-                               value={name}
-                               data-aos="fade-down-right" data-aos-delay="500"
-                        />
-                        <input type="tel" placeholder={'Telefon raqamingiz?'}
-                               max={13}  maxLength={13}
-                               onChange={e => setNumber(e.target.value)}
-                               value={number}
-                               data-aos="fade-down-left" data-aos-delay="600"
-                        />
-                        <input type="text" placeholder={'Qulay vaqt'}
-                               max={4}  maxLength={4}
-                               onChange={(e) => setOption(e.target.value)}
-                               data-aos="fade-up-right" data-aos-delay="700"
-                        />
-                        <button onClick={handleSubmit} data-aos="fade-up-left" data-aos-delay="800"/>
-                    </form>
-                </div>
-            </div>
-        </section>
+            </section>
+        </Suspense>
     )
 }
 
