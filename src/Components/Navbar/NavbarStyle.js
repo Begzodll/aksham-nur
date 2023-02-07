@@ -9,12 +9,12 @@ export const Container = styled.div`
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  @media (max-width: 991.9px){
+  @media (max-width: 991.9px) {
     width: 90%;
   }
 `
 export const Logo = styled.img`
-  width:150px;
+  width: 150px;
   height: 70px;
 `
 export const ListGroup = styled.ul`
@@ -37,7 +37,7 @@ export const ListGroup = styled.ul`
 export const Phone = styled.div`
   display: none;
   text-decoration: none;
-  @media(max-width: 991.9px){
+  @media (max-width: 991.9px) {
     display: block;
   }
 `
@@ -48,7 +48,7 @@ export const ListItem = styled.li`
   font-size: 15px;
   list-style: none;
   text-decoration: none;
-  @media (max-width: 991.9px){
+  @media (max-width: 991.9px) {
     margin: 2rem 0 0 0;
   }
 `
@@ -59,5 +59,22 @@ export const CallButton = styled.a`
   background: transparent;
   @media (max-width: 991.9px) {
     display: none;
+  }
+`
+export const DesktopIcons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 991.9px) {
+    display: none;
+  }
+`
+export const MobileIcons = styled.div`
+  display: none;
+  margin: 2.5rem 0 0 0;
+  @media (max-width: 991.9px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `

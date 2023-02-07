@@ -19,7 +19,7 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
 
     const center = {
         center: centerSelected,
-        zoom: 9
+        zoom: 13
     };
 
     const onMapClick = (e) => {
@@ -46,7 +46,7 @@ const GetLocation = ({toggle, setToggler, setCurrentLocation, currentLocation}) 
                             <ModalCard>
                                 <MapStyle>
                                     Loading...
-                                  <YMaps>
+                                  <YMaps query={{ apikey: "87bff623-64c1-4b91-afd2-02f03408074c" }}>
                                             <Map
                                                 state={center}
                                                 width="100%"

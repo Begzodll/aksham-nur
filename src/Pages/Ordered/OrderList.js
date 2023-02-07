@@ -23,7 +23,7 @@ const OrderList = () => {
     const [getNumber, setGetNumber] = useState('+998');
     const [name, setName] = useState('');
     const [togler, setTogler] = useState(false);
-    const [currentLocation, setCurrentLocation] = useState([]);
+    const [currentLocation, setCurrentLocation] = useState([40.709698, 72.057462]);
     const basketMealList = localStorage.getItem('basket');
 
     useEffect(() => {

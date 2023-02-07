@@ -10,6 +10,8 @@ const IndexAbout = React.lazy(() => import('./Pages/About/IndexAbout'));
 const AuthPage = React.lazy(() => import('./Pages/Authentication/AuthPage'));
 const Admin = React.lazy(() => import('./Pages/AdminPanel/Admin'));
 const OrderList = React.lazy(() => import('./Pages/Ordered/OrderList'));
+const NotFound = React.lazy(() => import('./Pages/NotFound/NotFound'));
+const Contacts = React.lazy(() => import('./Pages/Contacts/Contacts'));
 
 const App = () => {
     return (
@@ -21,7 +23,9 @@ const App = () => {
                         <Route path={'/login'} element={<AuthPage/>}/>
                         <Route path={'/about'} element={<IndexAbout/>}/>
                         <Route path={'/orders'} element={<OrderList/>}/>
+                        <Route path={'/contacts'} element={<Contacts/>}/>
                         <Route path={'/login/admin'} element={<Admin/>}/>
+                        <Route path={'*'} element={<NotFound/>}/>
                     </Route>
                 </Routes>
             </Suspense>
