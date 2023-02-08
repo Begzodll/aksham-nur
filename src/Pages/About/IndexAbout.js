@@ -16,6 +16,10 @@ const IndexAbout = () => {
                 <Statistic/>
                 <AboutGallery/>
                 <Accordion/>
+                {/*<div className="elfsight-app-81c42946-c9d1-4482-ae55-41233c43f6bd"></div>*/}
+
+                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                <div className="elfsight-app-81c42946-c9d1-4482-ae55-41233c43f6bd"></div>
             </AboutMainContainer>
         </Suspense>
     )
