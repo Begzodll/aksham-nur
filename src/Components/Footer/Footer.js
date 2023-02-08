@@ -109,7 +109,7 @@ function Footer({footer}) {
         </div>
 
         <div className={Style.footer__tablet}>
-            <p>&copy; Akshamnur cafe | Invented in 2023 </p>
+            <p>&copy; Akshamnur cafe | Invented in 2022 </p>
             <div className={Style.footer__tablet__icon}>
                 {
                     footer.socialIcons.map((item, index) => (
