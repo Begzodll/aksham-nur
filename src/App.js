@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
-import React, {Suspense} from "react";
-
+import React, {Suspense, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 import {ToastContainer} from 'react-toastify';
 
 const Loader = React.lazy(() => import('./Components/Loader/Loader'));
@@ -14,22 +14,25 @@ const NotFound = React.lazy(() => import('./Pages/NotFound/NotFound'));
 const Contacts = React.lazy(() => import('./Pages/Contacts/Contacts'));
 
 const App = () => {
+
+    window.location.href = 'https://akshamnur.uz';
+
     return (
         <div>
-            <Suspense fallback={<Loader/>}>
-                <Routes>
-                    <Route path={'/'} element={<MainLayout/>}>
-                        <Route index element={<HomeIndex/>}/>
-                        <Route path={'/login'} element={<AuthPage/>}/>
-                        <Route path={'/about'} element={<IndexAbout/>}/>
-                        <Route path={'/orders'} element={<OrderList/>}/>
-                        <Route path={'/contacts'} element={<Contacts/>}/>
-                        <Route path={'/login/admin'} element={<Admin/>}/>
-                        <Route path={'*'} element={<NotFound/>}/>
-                    </Route>
-                </Routes>
-            </Suspense>
-            <ToastContainer/>
+            {/*<Suspense fallback={<Loader/>}>*/}
+            {/*    <Routes>*/}
+            {/*        <Route path={'/'} element={<MainLayout/>}>*/}
+            {/*            <Route index element={<HomeIndex/>}/>*/}
+            {/*            <Route path={'/login'} element={<AuthPage/>}/>*/}
+            {/*            <Route path={'/about'} element={<IndexAbout/>}/>*/}
+            {/*            <Route path={'/orders'} element={<OrderList/>}/>*/}
+            {/*            <Route path={'/contacts'} element={<Contacts/>}/>*/}
+            {/*            <Route path={'/login/admin'} element={<Admin/>}/>*/}
+            {/*            <Route path={'*'} element={<NotFound/>}/>*/}
+            {/*        </Route>*/}
+            {/*    </Routes>*/}
+            {/*</Suspense>*/}
+            {/*<ToastContainer/>*/}
         </div>
     )
 }
