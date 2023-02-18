@@ -51,12 +51,12 @@ const OrderList = () => {
         if (name !== '' && getNumber.length >= 13 && currentLocation.length >= 1) {
             sendData({
                 data: `
-                        🔶 Yangi buyurtma == Vaqti ${date} ♦
-                        🔶 Ismi: ${name} ♦️
-                        🔶 Telefon raqami: ${getNumber} ♦️
-                        🔶 Buyurtmalar soni ${mealList.length + 1} ta ♦️ 
-                        🔶 Nomi: ${mealList.map(item => item.name,)}♦                        
-                        🔶 Manzil: https://maps.google.com?q=${currentLocation}  ♦
+                        🔶 Yangi buyurtma == Vaqti ${date} ♦\n
+                        🔶 Ismi: ${name} ♦\n
+                        🔶 Telefon raqami: ${getNumber} ♦\n
+                        🔶 Buyurtmalar soni ${mealList.length} ta ♦\n
+                        🔶 Nomi: ${mealList.map(item => item.name,)}♦ \n            
+                        🔶 Manzil: https://maps.google.com?q=${currentLocation} ♦\n
                     `
             })
             setName('')
