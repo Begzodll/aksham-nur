@@ -24,8 +24,14 @@ const AboutHeader = () => {
        <Suspense fallback={<Loader/>}>
            <AboutMainContainer>
                <Helmet>
-                   <meta charSet="utf-8" />
+                   <meta charSet="UTF-8"/>
                    <title>AkSkamnur haqida malumot</title>
+                   <meta name="description" content="Uzbek milliy mazali taomlari"/>
+                       <meta name="keywords" content="akshamnur, akshamnur uz, akshamnur restorani, akshamnur uzbekistan, shaxrihon restorani, akshamnur cafe"/>
+                           <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                               <meta name="robots" content="index, follow"/>
+                                   <link rel="canonical" href="https://www.akshamnur.uz/"/>
+
                    <meta name="description" content="Restoranimiz tarixi" />
                    <meta name="description" content="Professional oshpaz, Professional ishchilar " />
                    <meta name="description"

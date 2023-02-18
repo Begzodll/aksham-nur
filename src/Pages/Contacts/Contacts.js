@@ -75,8 +75,14 @@ const Contacts = () => {
                                 contactsLink.map((item, index) => (
                                     <ItemSection key={index}>
                                         <Helmet>
-                                            <meta charSet="utf-8"/>
+                                            <meta charSet="UTF-8"/>
                                             <title>Akshamnur manzili</title>
+                                            <meta name="description" content="Uzbek milliy mazali taomlari"/>
+                                            <meta name="keywords" content="akshamnur, akshamnur uz, akshamnur restorani, akshamnur uzbekistan, shaxrihon restorani, akshamnur cafe"/>
+                                            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+                                            <meta name="robots" content="index, follow"/>
+                                            <link rel="canonical" href="https://www.akshamnur.uz/"/>
+
                                             <meta name="description" content={item.desc}/>
                                             <meta name="description"
                                                   content="Milliy taomlar va mazzali shirinlik hamda qarsildoq fastfoodlar kam sarmoya va ulkan natija"/>

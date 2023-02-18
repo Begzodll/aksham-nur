@@ -11,6 +11,7 @@ export const ContainerGetLocation = styled.div`
 `
 export const ModalBlock = styled.div`
   width: 80%;
+  height: auto;
   margin: 2rem auto;
   padding: 1rem;
   border-radius: 20px;
@@ -25,10 +26,11 @@ export const ModalBlock = styled.div`
 `
 export const ModalCard = styled.div`
   position: relative;
+  height: auto;
 `
 export const MapStyle = styled.div`
   width: 80%;
-  height: 15%;
+  height: auto;
   margin: 0 auto 2rem auto;
   @media(max-width: 420px){
     width: 95%;
